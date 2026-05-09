@@ -1,0 +1,57 @@
+---
+title: "The Complete Next.js SEO Guide for 2025"
+date: "2025-03-28"
+description: "Everything you need to rank on Google with a Next.js app — metadata, JSON-LD, Core Web Vitals, and the mistakes most dev teams make."
+tags: ["SEO", "Next.js", "Performance"]
+---
+
+# The Complete Next.js SEO Guide for 2025
+
+Next.js gives you excellent SEO primitives out of the box. But knowing which tools exist and using them correctly are different things. This guide covers what actually matters in 2025.
+
+## The Metadata API
+
+Next.js 14+ ships with a Metadata API that generates `<head>` tags server-side. Use `generateMetadata` for dynamic pages:
+
+```ts
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const post = await getPost(params.slug);
+  return {
+    title: post.title,
+    description: post.description,
+    alternates: { canonical: `https://yourdomain.com/blog/${params.slug}` },
+  };
+}
+```
+
+## JSON-LD is non-negotiable
+
+JSON-LD structured data helps Google understand your content beyond raw text. For a blog:
+
+```tsx
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    datePublished: post.date,
+  }) }}
+/>
+```
+
+## Core Web Vitals
+
+In 2025, INP (Interaction to Next Paint) is the metric that catches most teams off guard. Tips:
+
+- Use `useTransition` for non-urgent state updates
+- Avoid heavy `useEffect` chains on page load
+- Prefer server components for data fetching
+
+## The biggest mistakes
+
+1. Missing `canonical` tags — creates duplicate content issues
+2. No `alt` text on images — hurts both SEO and accessibility
+3. Blocking JavaScript in `<head>` — delays LCP
+
+Get these right and you're ahead of 80% of Next.js sites.

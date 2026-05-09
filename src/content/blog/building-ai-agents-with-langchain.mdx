@@ -1,0 +1,45 @@
+---
+title: "Building Production-Ready AI Agents with LangChain"
+date: "2025-04-15"
+description: "A practical guide to building AI agents that actually work in production — from architecture decisions to error handling and observability."
+tags: ["AI", "LangChain", "Engineering"]
+---
+
+# Building Production-Ready AI Agents with LangChain
+
+AI agents are having a moment. But most tutorials show you the happy path — a demo that works in a notebook but falls apart in production. This post covers what we've learned shipping AI agents for real clients.
+
+## What makes an agent "production-ready"?
+
+A production agent needs to:
+
+1. **Handle failures gracefully** — LLM APIs go down. Tools fail. The agent must degrade without losing user data.
+2. **Be observable** — you need to know what the agent did and why.
+3. **Be predictable** — stochastic models need deterministic guardrails.
+4. **Be fast enough** — users won't wait 30 seconds for a response.
+
+## Architecture
+
+We use a simple pattern: **router → tools → composer**.
+
+- The **router** classifies intent and selects the appropriate tool chain.
+- **Tools** are small, focused functions with retry logic and timeouts.
+- The **composer** assembles the final response from tool outputs.
+
+This separation makes each component independently testable.
+
+## Key lessons from production
+
+**1. Cache aggressively.** Embeddings and classification results are expensive. Cache with Redis and a 1-hour TTL.
+
+**2. Stream responses.** Don't make users wait for the full response. Stream tokens as they arrive.
+
+**3. Set tight timeouts.** Each tool call should timeout at 10 seconds. The entire agent response should timeout at 30 seconds.
+
+**4. Log everything.** Every agent run should produce a structured log with: input, tool calls, tool outputs, final response, latency, and cost.
+
+**5. Human handoff is not optional.** Always build an escape hatch. When confidence is low, route to a human and say so clearly.
+
+## Conclusion
+
+Building AI agents is still more engineering than magic. The models are powerful, but reliability comes from the infrastructure around them.
