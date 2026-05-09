@@ -63,6 +63,17 @@ export function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
+          <Link
+            href="/support"
+            className={cn(
+              "px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+              pathname === "/support"
+                ? "text-text bg-surface-2"
+                : "text-muted hover:text-text hover:bg-surface-2"
+            )}
+          >
+            Support
+          </Link>
           <Link href="/contact">
             <Button size="sm" variant="gradient">Book a call</Button>
           </Link>
@@ -95,6 +106,17 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/support"
+            className={cn(
+              "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
+              pathname === "/support"
+                ? "text-text bg-surface-2"
+                : "text-muted hover:text-text hover:bg-surface-2"
+            )}
+          >
+            Support
+          </Link>
           <div className="pt-3">
             <Link href="/contact" className="block">
               <Button size="sm" variant="gradient" className="w-full">Book a call</Button>
