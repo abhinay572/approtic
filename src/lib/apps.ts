@@ -80,6 +80,75 @@ export const apps: AppData[] = [
       "ResinCraft uses standard geometric formulas and brand-published mix ratios. Always cross-reference your manufacturer's instructions before pouring, and use proper PPE (gloves, ventilation) when working with epoxy.",
     contact: "abhinay@approtic.in",
   },
+  {
+    slug: "triprank",
+    name: "TripRank",
+    subtitle: "Speed Tracker",
+    tagline: "#1 Speed Tracker & Speed Camera Detector.",
+    description:
+      "Pro-grade GPS speedometer with real-time speed camera, traffic light & stop sign alerts. Auto-log trips with G-force, braking & cornering stats. Share beautiful trip cards. No ads. On-device data.",
+    price: "Free",
+    category: "Navigation",
+    platform: "iPhone & iPad",
+    appStoreUrl:
+      "https://apps.apple.com/us/app/triprank-speed-tracker/id6760617806",
+    appStoreId: "6760617806",
+    color: "from-blue-600 via-cyan-500 to-sky-700",
+    accentColor: "text-cyan-400",
+    icon: "🏎️",
+    features: [
+      {
+        title: "Live GPS Speedometer",
+        description:
+          "Real-time speed with max and average, trip distance, duration, altitude, and live route mapping.",
+      },
+      {
+        title: "Speed Camera Alerts",
+        description:
+          "Fixed, mobile, red-light and average-speed cameras worldwide via OpenStreetMap. 500m countdowns, haptic feedback.",
+      },
+      {
+        title: "Traffic Signal Detection",
+        description:
+          "Detect traffic lights, stop signs, and pedestrian crossings ahead with colour-coded pins and distance warnings.",
+      },
+      {
+        title: "G-Force & Telemetry",
+        description:
+          "Acceleration, braking, and cornering intensity measured in real time. Full driving behaviour analysis per trip.",
+      },
+      {
+        title: "Dynamic Island & Live Activity",
+        description:
+          "Speed, alerts, and camera countdowns on your Lock Screen and Dynamic Island — without opening the app.",
+      },
+      {
+        title: "Global Leaderboard",
+        description:
+          "Compete worldwide on top speed, total distance, and trip count. Add friends via QR code or profile link.",
+      },
+      {
+        title: "Shareable Trip Cards",
+        description:
+          "Every trip becomes an Instagram-ready stat card with route map, key data, and personal branding.",
+      },
+      {
+        title: "AI Car Mod",
+        description:
+          "Transform any car photo with AI — Off-Road, Racing, Lowrider, Luxury, Cyberpunk, Classic styles.",
+      },
+    ],
+    perfectFor: [
+      "Car enthusiasts who want professional-grade trip data",
+      "Daily commuters tracking routes and driving habits",
+      "Weekend drivers and road-trip fans",
+      "Anyone who wants camera and signal alerts while driving",
+      "Drivers who love to share their stats with their community",
+    ],
+    disclaimer:
+      "TripRank is for informational purposes only. Never interact with the app while driving. Always obey speed limits and traffic laws. GPS accuracy may vary.",
+    contact: "support@approtic.in",
+  },
 ];
 
 export function getApp(slug: string): AppData | undefined {
