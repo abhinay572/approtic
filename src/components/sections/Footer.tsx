@@ -30,7 +30,7 @@ const socials = [
   { icon: Globe, href: "https://linkedin.com/company/approtic", label: "LinkedIn" },
   {
     icon: MessageCircle,
-    href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919999999999"}`,
+    href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919666659359"}`,
     label: "WhatsApp",
   },
   { icon: Mail, href: "mailto:hello@approtic.in", label: "Email" },

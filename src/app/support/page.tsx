@@ -74,7 +74,7 @@ export default function SupportPage() {
               title: "WhatsApp",
               description: "Fastest response — usually under 5 minutes during business hours.",
               action: "Chat now",
-              href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919999999999"}`,
+              href: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919666659359"}`,
               external: true,
               badge: "Fastest",
             },

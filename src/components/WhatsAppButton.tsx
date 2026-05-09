@@ -3,7 +3,7 @@ import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919999999999";
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919666659359";
 const PRE_FILL = encodeURIComponent(
   "Hi Approtic! I'd like to discuss a project with you."
 );

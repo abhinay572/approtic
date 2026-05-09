@@ -99,7 +99,7 @@ export function Hero() {
               className="flex flex-wrap gap-4 pt-2"
             >
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919999999999"}?text=${encodeURIComponent("Hi Approtic! I'd like to book a discovery call.")}`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919666659359"}?text=${encodeURIComponent("Hi Approtic! I'd like to book a discovery call.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
