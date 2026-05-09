@@ -10,6 +10,7 @@ import { GradientText } from "@/components/ui/GradientText";
 const nav = [
   { label: "Services", href: "/services" },
   { label: "Products", href: "/products" },
+  { label: "Apps", href: "/apps" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },

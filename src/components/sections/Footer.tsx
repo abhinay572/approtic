@@ -14,6 +14,7 @@ const links = {
     { label: "AI Agents", href: "/services#ai-agents" },
     { label: "Custom Dev", href: "/services#development" },
     { label: "SaaS Products", href: "/products" },
+    { label: "Mobile Apps", href: "/apps" },
     { label: "Marketing", href: "/services#marketing" },
   ],
   Resources: [
