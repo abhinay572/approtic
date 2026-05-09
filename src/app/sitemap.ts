@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { products } from "@/lib/products";
 import { projects } from "@/lib/portfolio";
+import { apps } from "@/lib/apps";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://approtic.in";
@@ -41,5 +42,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPages, ...productPages, ...portfolioPages];
+  const appPages = apps.flatMap((a) => [
+    { url: `${base}/apps/${a.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/apps/${a.slug}/privacy`, lastModified: now, changeFrequency: "yearly" as const, priority: 0.4 },
+    { url: `${base}/apps/${a.slug}/terms`, lastModified: now, changeFrequency: "yearly" as const, priority: 0.4 },
+  ]);
+
+  return [...staticPages, ...blogPages, ...productPages, ...portfolioPages, ...appPages];
 }
