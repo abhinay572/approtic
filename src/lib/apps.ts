@@ -23,6 +23,40 @@ export interface AppData {
 }
 
 export const apps: AppData[] = [
+  {
+    slug: "routeflow",
+    name: "RouteFlow",
+    subtitle: "Route Planner",
+    tagline: "Plan, optimize and drive multi-stop routes in seconds.",
+    description:
+      "RouteFlow is the fastest way for delivery drivers, couriers and field teams to plan and run multi-stop routes. Add all your stops, let RouteFlow find the optimal order, and drive with built-in turn-by-turn navigation, live speed-camera alerts and proof of delivery.",
+    price: "Subscription",
+    category: "Navigation",
+    platform: "iPhone",
+    appStoreUrl: "https://apps.apple.com/app/id6774729420",
+    appStoreId: "6774729420",
+    color: "from-cyan-500 via-sky-600 to-blue-700",
+    accentColor: "text-cyan-400",
+    icon: "\u{1F69A}",
+    features: [
+      { title: "Smart Route Optimization", description: "Visit every stop in the shortest, most fuel-efficient order — saving hours every week." },
+      { title: "Built-in Turn-by-Turn Navigation", description: "A real in-app map with voice guidance. Prefer Apple Maps, Google Maps or Waze? Hand off any stop with one tap." },
+      { title: "Live Speed-Camera Alerts", description: "See fixed and average-speed cameras on the map and drive aware." },
+      { title: "Proof of Delivery", description: "Capture a photo and signature at every door, then share it with the customer." },
+      { title: "Live Location Sharing", description: "Share a private link so customers can follow your arrival in real time." },
+      { title: "ETA, Distance & Fuel Up Front", description: "Know your arrival time and estimated fuel cost before you leave." },
+    ],
+    perfectFor: [
+      "Delivery drivers and couriers",
+      "Field service and sales teams",
+      "Last-mile and logistics operators",
+      "Anyone running multi-stop routes every day",
+    ],
+    contact: "abhinay@approtic.in",
+    dataTypes: ["location", "camera", "photo", "cloud"],
+    hasSubscription: true,
+    hasUserAccounts: false,
+  },
   // ── EXISTING ──────────────────────────────────────────────────────────────
   {
     slug: "resincraft",
