@@ -46,10 +46,10 @@ function buildPrivacySections(app: AppData) {
         : [
             `${app.name} may collect the following information to provide and improve the App:`,
             ...(collectsLocation
-              ? ["• Location / GPS data: used to calculate speed, route, and proximity to points of interest. Location data is processed on-device and is only uploaded when you choose to share a trip or appear on a leaderboard."]
+              ? ["• Location / GPS data: " + (app.locationUse ?? "used to calculate speed, route, and proximity to points of interest. Location data is processed on-device and is only uploaded when you choose to share a trip or appear on a leaderboard.")]
               : []),
             ...(collectsCamera
-              ? ["• Photos and camera access: used to process images you choose to submit. Photos are processed locally on your device or sent securely to our AI service to generate results. We do not store your photos beyond the time needed to generate a response."]
+              ? ["• Photos and camera access: " + (app.cameraUse ?? "used to process images you choose to submit. Photos are processed locally on your device or sent securely to our AI service to generate results. We do not store your photos beyond the time needed to generate a response.")]
               : []),
             ...(isVpn
               ? ["• Network traffic: routed through our VPN servers in encrypted form. We do not log your browsing activity, connection timestamps, IP addresses, or DNS queries."]
@@ -74,7 +74,7 @@ function buildPrivacySections(app: AppData) {
         `We use information collected only for the following purposes:`,
         `• To provide and operate the core features of ${app.name}`,
         hasCloud ? "• To sync your data across your devices (if cloud features are enabled)" : null,
-        collectsLocation ? "• To display your trip data and (if you choose) contribute to leaderboards" : null,
+        collectsLocation ? (app.locationUse ? "• To plan, optimize, and navigate your routes and trips" : "• To display your trip data and (if you choose) contribute to leaderboards") : null,
         isVpn ? "• To route your internet traffic through our encrypted VPN servers" : null,
         isKids ? "• To provide age-appropriate AI responses with content filtering" : null,
         `• To diagnose and fix bugs and crashes`,
@@ -120,7 +120,7 @@ function buildPrivacySections(app: AppData) {
     },
     {
       title: isVpn || isKids ? "9. Third-Party Services" : "8. Third-Party Services",
-      content: `${app.name} may use the following categories of third-party services:\n\n• Apple (App Store, StoreKit, CloudKit): governed by Apple's Privacy Policy\n${hasCloud ? "• Cloud infrastructure providers: bound by data processing agreements and GDPR standard contractual clauses\n" : ""}${collectsCamera || collectsLocation ? "• AI processing services: process image or location data solely to generate App features; data is not retained for training\n" : ""}• Crash analytics (e.g. Sentry or Firebase Crashlytics): anonymised error reports only\n\nWe do not embed advertising SDKs.`,
+      content: `${app.name} may use the following categories of third-party services:\n\n• Apple (App Store, StoreKit, CloudKit): governed by Apple's Privacy Policy\n${hasCloud ? "• Cloud infrastructure providers: bound by data processing agreements and GDPR standard contractual clauses\n" : ""}${(collectsCamera || collectsLocation) && app.usesAI !== false ? "• AI processing services: process image or location data solely to generate App features; data is not retained for training\n" : ""}• Crash analytics (e.g. Sentry or Firebase Crashlytics): anonymised error reports only\n\nWe do not embed advertising SDKs.`,
     },
     {
       title: isVpn || isKids ? "10. International Transfers" : "9. International Transfers",

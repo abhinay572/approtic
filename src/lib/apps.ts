@@ -20,6 +20,9 @@ export interface AppData {
   dataTypes: Array<"none" | "location" | "camera" | "vpn" | "kids" | "health" | "cloud" | "photo">;
   hasSubscription: boolean;
   hasUserAccounts: boolean;
+  locationUse?: string;
+  cameraUse?: string;
+  usesAI?: boolean;
 }
 
 export const apps: AppData[] = [
@@ -56,6 +59,11 @@ export const apps: AppData[] = [
     dataTypes: ["location", "camera", "photo", "cloud"],
     hasSubscription: true,
     hasUserAccounts: false,
+    locationUse:
+      "used to set your start point, optimize the order of your stops, guide you turn-by-turn, and show your current speed. Your location is processed on your device and is only sent to our server when you choose to share a live trip link so the people you pick can follow your arrival; that link auto-expires about 30 minutes after you stop sharing.",
+    cameraUse:
+      "used only when you capture proof-of-delivery photos and a signature at a stop. These are stored on your device and are shared only when you choose to send them to a customer. RouteFlow does not process your photos with AI.",
+    usesAI: false,
   },
   // ── EXISTING ──────────────────────────────────────────────────────────────
   {
