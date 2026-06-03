@@ -64,6 +64,8 @@ export const apps: AppData[] = [
     cameraUse:
       "used only when you capture proof-of-delivery photos and a signature at a stop. These are stored on your device and are shared only when you choose to send them to a customer. RouteFlow does not process your photos with AI.",
     usesAI: false,
+    disclaimer:
+      "RouteFlow is a planning and navigation aid, not a substitute for safe driving or your own judgement. Obey all traffic laws and posted speed limits, and do not interact with the App while your vehicle is in motion. Routes, ETAs, traffic conditions, and speed-camera information are estimates and may be inaccurate or out of date. You are solely responsible for your driving, your route choices, and your compliance with the law.",
   },
   // ── EXISTING ──────────────────────────────────────────────────────────────
   {
