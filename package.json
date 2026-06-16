@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "gen:blog": "node scripts/gen-blog.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/gen-blog.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cf:build": "node scripts/gen-blog.mjs && opennextjs-cloudflare build",
+    "cf:deploy": "node scripts/gen-blog.mjs && opennextjs-cloudflare build && opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -33,12 +37,14 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.19.11",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "marked": "^18.0.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -1,7 +1,6 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import readingTime from "reading-time";
+// Blog data loaded from a build-time generated JSON (see scripts/gen-blog.mjs).
+// No filesystem reads at runtime, so it works on Cloudflare Workers.
+import generated from "@/content/blog.generated.json";
 
 export interface PostMeta {
   slug: string;
@@ -13,45 +12,22 @@ export interface PostMeta {
   readingTime: string;
 }
 
-const CONTENT_DIR = path.join(process.cwd(), "src/content/blog");
+interface StoredPost extends PostMeta {
+  content: string;
+  html: string;
+}
+
+const posts = generated as unknown as StoredPost[];
 
 export function getAllPosts(): PostMeta[] {
-  if (!fs.existsSync(CONTENT_DIR)) return [];
-  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".mdx"));
-  return files
-    .map((file) => {
-      const raw = fs.readFileSync(path.join(CONTENT_DIR, file), "utf-8");
-      const { data, content } = matter(raw);
-      const rt = readingTime(content);
-      return {
-        slug: file.replace(".mdx", ""),
-        title: data.title ?? "Untitled",
-        date: data.date ?? "",
-        description: data.description ?? "",
-        cover: data.cover,
-        tags: data.tags ?? [],
-        readingTime: rt.text,
-      };
-    })
+  return posts
+    .map(({ content: _content, html: _html, ...meta }) => meta)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-export function getPost(slug: string): { meta: PostMeta; content: string } | null {
-  const filePath = path.join(CONTENT_DIR, `${slug}.mdx`);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(raw);
-  const rt = readingTime(content);
-  return {
-    meta: {
-      slug,
-      title: data.title ?? "Untitled",
-      date: data.date ?? "",
-      description: data.description ?? "",
-      cover: data.cover,
-      tags: data.tags ?? [],
-      readingTime: rt.text,
-    },
-    content,
-  };
+export function getPost(slug: string): { meta: PostMeta; content: string; html: string } | null {
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) return null;
+  const { content, html, ...meta } = post;
+  return { meta, content, html };
 }
