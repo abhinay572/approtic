@@ -1,0 +1,3 @@
+module.exports=[15705,a=>{"use strict";var b=a.i(87924),c=a.i(46271),d=a.i(39432),e=a.i(72131),f=a.i(68114);a.s(["Stagger",0,function({children:a,className:g,stagger:h=.08,delay:i=0}){let j=(0,e.useRef)(null),k=(0,d.useInView)(j,{once:!0,margin:"-80px"});return(0,b.jsx)(c.motion.div,{ref:j,initial:"hidden",animate:k?"visible":"hidden",variants:{hidden:{},visible:{transition:{staggerChildren:h,delayChildren:i}}},className:(0,f.cn)(g),children:a})},"StaggerItem",0,function({children:a,className:d}){return(0,b.jsx)(c.motion.div,{variants:{hidden:{opacity:0,y:30},visible:{opacity:1,y:0,transition:{duration:.5,ease:[.21,.45,.27,.9]}}},className:(0,f.cn)(d),children:a})}])}];
+
+//# sourceMappingURL=src_components_ui_Stagger_tsx_0w47uio._.js.map

@@ -6,6 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 import { Section } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
 import { apps, getApp } from "@/lib/apps";
+import TomatorCalLanding from "@/components/apps/TomatorCalLanding";
 
 export function generateStaticParams() {
   return apps.map((a) => ({ slug: a.slug }));
@@ -34,6 +35,8 @@ export default async function AppPage({
   const { slug } = await params;
   const app = getApp(slug);
   if (!app) notFound();
+
+  if (app.slug === "tomator-cal-ai") return <TomatorCalLanding app={app} />;
 
   const jsonLd = {
     "@context": "https://schema.org",
