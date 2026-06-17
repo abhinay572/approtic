@@ -27,6 +27,45 @@ export interface AppData {
 
 export const apps: AppData[] = [
   {
+    slug: "tomator-cal-ai",
+    name: "Tomator Cal AI",
+    subtitle: "AI Calorie Tracker",
+    tagline: "Snap your meal. Know your calories & macros.",
+    description:
+      "Tomator Cal AI is the fastest way to track what you eat. Snap a photo of your meal and AI instantly identifies each food and estimates calories, protein, carbs and fat — with a 0–100 health score on every meal. Prefer to type or scan a barcode? Describe your meal in words or scan any packaged product. Track your day with calorie and macro rings, log water, follow your weight trend, keep a daily streak, and sync everything to Apple Health.",
+    price: "Free",
+    category: "Health & Fitness",
+    platform: "iPhone",
+    appStoreUrl: "https://apps.apple.com/app/id6780629589",
+    appStoreId: "6780629589",
+    color: "from-red-600 via-rose-500 to-orange-500",
+    accentColor: "text-red-400",
+    icon: "🍅",
+    features: [
+      { title: "AI Photo Scan", description: "Point your camera at any meal and AI identifies each food and estimates calories and macros in seconds." },
+      { title: "Calories & Macros Instantly", description: "Accurate calorie, protein, carb and fat estimates with sensible serving sizes for every item." },
+      { title: "Health Score on Every Meal", description: "A 0–100 score shows how healthy a meal really is, with fiber, sugar and sodium highlights." },
+      { title: "Barcode Scanner", description: "Scan any packaged product for instant nutrition facts, powered by the Open Food Facts database." },
+      { title: "Describe & Log", description: "Too busy to snap a photo? Just type what you ate and AI does the math for you." },
+      { title: "Progress & Apple Health", description: "Track your weight trend and weekly calories, keep a daily streak, and sync to Apple Health." },
+    ],
+    perfectFor: [
+      "Anyone counting calories or macros for weight loss",
+      "People who find manual food logging too slow",
+      "Gym-goers tracking protein and daily macros",
+      "Anyone who wants a quick health score on what they eat",
+    ],
+    disclaimer:
+      "Tomator Cal AI provides general wellness and nutrition estimates for informational purposes only and is not medical advice. AI calorie and macro estimates may be inaccurate. Consult a qualified professional before making dietary, fitness, or health decisions.",
+    contact: "support@approtic.in",
+    dataTypes: ["camera", "photo", "health", "cloud"],
+    hasSubscription: true,
+    hasUserAccounts: false,
+    cameraUse:
+      "used to photograph your meals for AI nutrition analysis and to scan product barcodes. Meal photos are sent securely to our AI processing provider only to identify foods and estimate nutrition; they are not stored on our servers after processing and are never used to identify you.",
+    usesAI: true,
+  },
+  {
     slug: "routeflow",
     name: "RouteFlow",
     subtitle: "Route Planner",
