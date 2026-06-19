@@ -46,7 +46,7 @@ const css = `
 
 export default function EmberBiblePage() {
   const year = new Date().getFullYear();
-  const S = "https://emberbible.vercel.app/screens";
+  const S = "/emberbible/screens";
   return (
     <div className="eb">
       <style dangerouslySetInnerHTML={{ __html: css }} />
