@@ -27,6 +27,42 @@ export interface AppData {
 
 export const apps: AppData[] = [
   {
+    slug: "soniclean",
+    name: "Sonic Clean",
+    subtitle: "Water Eject & Speaker Cleaner",
+    tagline: "Eject water and clear dust from your speaker — honestly.",
+    description:
+      "Dropped your phone in water? Sonic Clean plays a clean, pulsed low-frequency tone to help push water out of your speaker — instantly, with no account and no internet. Honest by design: it shows the exact frequency that's playing, with no fake \"particles removed\" counters and no pretend progress. A paid app with no ads, no tracking, no subscriptions, and no data collection.",
+    price: "$9.99",
+    category: "Utilities",
+    platform: "iPhone",
+    appStoreUrl: "https://apps.apple.com/app/id6785198297",
+    appStoreId: "6785198297",
+    color: "from-cyan-500 via-sky-500 to-blue-700",
+    accentColor: "text-cyan-400",
+    icon: "\u{1F30A}",
+    features: [
+      { title: "Eject Water", description: "A pulsed ~165 Hz tone helps push trapped water out of the speaker in a single tap." },
+      { title: "Clean Dust", description: "Sweeping tones help loosen fine debris and lint caught in the speaker mesh." },
+      { title: "Manual Tone Generator", description: "Play any frequency from 20 Hz to 20 kHz, with your choice of waveform." },
+      { title: "Stereo Speaker Test", description: "Quick left / right / both tones so you can check the result yourself." },
+      { title: "Honest by Design", description: "We show the exact frequency that's playing — no fake counters, no pretend progress bars, no \"guaranteed fix\" claims." },
+      { title: "100% Offline & Private", description: "No ads, no tracking, no account, no data collected. Everything runs on your device." },
+    ],
+    perfectFor: [
+      "Anyone who just got their phone wet",
+      "A muffled or quiet speaker after a splash",
+      "Clearing dust and lint from the speaker grille",
+      "People who want a clean, honest utility — no gimmicks",
+    ],
+    disclaimer:
+      "Sonic Clean is a utility, not a repair service. It can help dislodge water or loose debris, but it does not guarantee removal and does not repair hardware. For best results, set volume to maximum, remove any case, and hold the phone with the speaker facing down.",
+    contact: "abhinay@approtic.in",
+    dataTypes: ["none"],
+    hasSubscription: false,
+    hasUserAccounts: false,
+  },
+  {
     slug: "tomator-cal-ai",
     name: "Tomator Cal AI",
     subtitle: "AI Calorie Tracker",
