@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
+  async rewrites() {
+    return [
+      { source: "/soniclean", destination: "/apps/soniclean" },
+      { source: "/soniclean/:path*", destination: "/apps/soniclean/:path*" },
+      { source: "/sonicclean", destination: "/apps/soniclean" },
+      { source: "/sonicclean/:path*", destination: "/apps/soniclean/:path*" },
+    ];
+  },
 };
 
 export default nextConfig;
