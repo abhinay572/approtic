@@ -40,10 +40,12 @@ enum Route: Hashable {
     case paywall             // 11
     case scanHistory         // 13
     case compare             // 14
+    case routine             // 15
     case exercisePlayer(exerciseIndex: Int) // 16
     case faceCard            // 17
     case battles             // 18
-    case learnArticle(articleIndex: Int)    // 19
+    case learnHub            // 19
+    case learnArticle(articleIndex: Int)    // 19 detail
 }
 
 @Observable
@@ -89,11 +91,22 @@ struct RootView: View {
     private func destination(for route: Route) -> some View {
         switch route {
         case .hero: HeroView()
+        case .coachIntro: CoachIntroView()
+        case .signIn: SignInSheetView()
+        case .interstitials: InterstitialsView()
+        case .scanCapture: ScanCaptureView()
+        case .analysing: AnalysingView()
+        case .structureAnalysis: StructureAnalysisView()
+        case .skinAnalysis: SkinAnalysisView()
         case .paywall: PaywallView()
-        case .exercisePlayer(let index): ExercisePlayerView(exerciseIndex: index)
         case .scanHistory: ScanHistoryView()
+        case .compare: CompareView()
+        case .routine: RoutineView()
+        case .exercisePlayer(let index): ExercisePlayerView(exerciseIndex: index)
+        case .faceCard: FaceCardView()
         case .battles: BattlesView()
-        default: ComingSoonView(route: route)
+        case .learnHub: LearnHubView()
+        case .learnArticle: ComingSoonView(route: route)
         }
     }
 }

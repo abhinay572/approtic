@@ -21,6 +21,7 @@ struct DashboardView: View {
                     scoreCard
                     metricGrid
                     routineCard
+                    quickLinks
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, DS.Size.tabBarHeight + 40)
@@ -110,9 +111,37 @@ struct DashboardView: View {
         }
     }
 
+    private var quickLinks: some View {
+        ScrollView(.horizontal) {
+            HStack(spacing: 8) {
+                quickLink("icon-clock-history", "History", .scanHistory)
+                quickLink("icon-compare", "Compare", .compare)
+                quickLink("icon-star", "FaceCard", .faceCard)
+                quickLink("icon-swords", "Battles", .battles)
+                quickLink("icon-book-learn", "Learn", .learnHub)
+            }
+        }
+        .scrollIndicators(.hidden)
+    }
+
+    private func quickLink(_ icon: String, _ title: String, _ route: Route) -> some View {
+        Button {
+            router.push(route)
+        } label: {
+            HStack(spacing: 6) {
+                Image(icon)
+                    .resizable().renderingMode(.template)
+                    .frame(width: 16, height: 16)
+                Text(title)
+            }
+            .chipStyle()
+        }
+        .buttonStyle(.plain)
+    }
+
     private var routineCard: some View {
         Button {
-            router.tab = .progress
+            router.push(.routine)
         } label: {
             HStack(spacing: 14) {
                 Image(service.todayRoutine.exercises[0].illustration)
