@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Claude Code local (machine-specific) settings
+.claude/settings.local.json
+
 # Xcode (FaceKit iOS project)
 FaceKit/**/xcuserdata/
 FaceKit/**/*.xcuserstate
