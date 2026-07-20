@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Xcode (FaceKit iOS project)
+FaceKit/**/xcuserdata/
+FaceKit/**/*.xcuserstate
+FaceKit/DerivedData/
+FaceKit/build/

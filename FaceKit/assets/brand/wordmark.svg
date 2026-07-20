@@ -1,0 +1,11 @@
+<svg width="480" height="120" viewBox="0 0 480 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="mark">
+    <path d="M20 40V28a8 8 0 0 1 8-8h12" stroke="#16181D" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M84 20h12a8 8 0 0 1 8 8v12" stroke="#16181D" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M104 80v12a8 8 0 0 1-8 8H84" stroke="#16181D" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M40 100H28a8 8 0 0 1-8-8V80" stroke="#16181D" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M47 52c0-10 6.5-16 15-16s15 6 15 16c0 7-3 12-7 15.5-2 1.8-3 4.3-3 6.8v1.2h-10v-1.2c0-2.5-1-5-3-6.8-4-3.5-7-8.5-7-15.5Z" stroke="#2F80FF" stroke-width="7" stroke-linejoin="round" fill="none"/>
+    <path d="M54 88h16" stroke="#2F80FF" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="136" y="79" font-family="General Sans, -apple-system, sans-serif" font-weight="600" font-size="56" fill="#16181D">Face<tspan fill="#2F80FF">Kit</tspan></text>
+</svg>
