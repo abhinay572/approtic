@@ -26,10 +26,6 @@
 			exceptions = (
 				FACEC0DE00000000000000E1 /* Exceptions for "FaceKit" folder in "FaceKit" target */,
 			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
 			path = FaceKit;
 			sourceTree = "<group>";
 		};

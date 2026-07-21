@@ -1,0 +1,22 @@
+:root {
+  --ff-bg-bone: #F1EEE8;
+  --ff-bg-chat-glow: #DCEBFF;
+  --ff-surface: #FFFFFF;
+  --ff-ink: #12151B;
+  --ff-body: #6E7480;
+  --ff-muted: #A4A9B2;
+  --ff-line: #E4E0D8;
+  --ff-accent: #2F80FF;
+  --ff-accent-pale: #EAF2FF;
+  --ff-success: #19B56B;
+  --ff-danger: #E85D5D;
+  --ff-gold: #C49A45;
+  --ff-font-display: "SF Pro Display", Inter, "Helvetica Neue", Arial, sans-serif;
+  --ff-font-text: "SF Pro Text", Inter, "Helvetica Neue", Arial, sans-serif;
+  --ff-radius-card: 24px;
+  --ff-radius-sheet: 32px;
+  --ff-radius-pill: 999px;
+  --ff-shadow-card: 0 12px 32px rgba(20, 24, 32, 0.08);
+  --ff-shadow-chip: 0 6px 18px rgba(20, 24, 32, 0.06);
+  --ff-shadow-accent: 0 10px 28px rgba(47, 128, 255, 0.22);
+}

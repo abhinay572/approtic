@@ -1,0 +1,46 @@
+{
+  "scans": [
+    {
+      "date": "2026-04-14T07:42:00",
+      "score": 82,
+      "jaw": 89,
+      "symmetry": 94,
+      "delta": 2
+    },
+    {
+      "date": "2026-04-13T08:15:00",
+      "score": 80,
+      "jaw": 87,
+      "symmetry": 92,
+      "delta": 1
+    },
+    {
+      "date": "2026-04-11T07:50:00",
+      "score": 79,
+      "jaw": 86,
+      "symmetry": 92,
+      "delta": 0
+    },
+    {
+      "date": "2026-04-09T07:30:00",
+      "score": 78,
+      "jaw": 83,
+      "symmetry": 90,
+      "delta": -1
+    },
+    {
+      "date": "2026-04-07T08:02:00",
+      "score": 79,
+      "jaw": 81,
+      "symmetry": 89,
+      "delta": 0
+    },
+    {
+      "date": "2026-04-04T07:45:00",
+      "score": 77,
+      "jaw": 79,
+      "symmetry": 88,
+      "delta": -2
+    }
+  ]
+}

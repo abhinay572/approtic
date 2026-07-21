@@ -1,0 +1,37 @@
+{
+  "user": {
+    "name": "Abhinay",
+    "score": 82,
+    "percentile": 14,
+    "streakDays": 22
+  },
+  "progress": {
+    "structureDelta30d": 7
+  },
+  "routine": {
+    "completed": 3,
+    "total": 5,
+    "items": [
+      {
+        "name": "Mewing hold",
+        "detail": "1m 30s",
+        "done": true
+      },
+      {
+        "name": "Hydrate",
+        "detail": "Drink 2L today",
+        "done": true
+      },
+      {
+        "name": "Jaw circuit",
+        "detail": "5 exercises",
+        "done": false
+      },
+      {
+        "name": "Chin tucks",
+        "detail": "3 sets",
+        "done": false
+      }
+    ]
+  }
+}

@@ -98,7 +98,7 @@ export default async function AppPage({
                 </Badge>
                 <Badge variant="outline" className="text-xs gap-1">
                   <Star size={10} className="fill-yellow-400 text-yellow-400" />
-                  5.0
+                  App Store
                 </Badge>
               </div>
 

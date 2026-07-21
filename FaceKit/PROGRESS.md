@@ -3,11 +3,11 @@
 ## Phase 0 — Setup
 - [x] Assets audited (ASSETS-TODO.md written) — 2026-07-20
 - [x] Missing/weak assets regenerated (53 icons, 8 illustrations, mascot, app icon, avatars; fonts + mask USDZ blocked — see ASSETS-TODO.md)
-- [ ] 20-screen sheet sliced into /reference/screens — **BLOCKED: sheet not uploaded** (see reference/README.md)
+- [x] 20-screen sheet sliced into /reference/screens (2026-07-21, from kit manifest) · real kit assets imported into Assets.xcassets · General Sans ×6 installed + bundled · screenshot harness added (`-screen <name>` launch arg)
 - [x] Xcode project scaffolded (DesignSystem.swift, MockDataService, AppRouter + 5-tab shell, fonts plumbing, Assets.xcassets)
 
 ## Screens (build loop: built → screenshot-verified → committed)
-- [~] 01 Coach chat (chip→bubble morph) — **code complete** (typing dots 900ms, bubble slide-up spring 0.4/0.75, chip cascade 50ms, matchedGeometryEffect morph, radial glow bg). Screenshot loop **requires a Mac** — this session ran on Linux with no Xcode/simulator. Next Mac session: run the loop vs the reference before checking this off.
+- [x] 01 Coach chat — **screenshot-verified vs reference 04** (2026-07-21, Mac loop): real kit mascot, exact copy deck, segmented progress, option rows w/ azure check, azure user bubbles, pale→active CTA, options flow under conversation. Morph + typing motion per spec. Step-2 chips (ref 05) implemented, selected-state screenshot pending.
 - [~] 02 Coach intro (name input) — code complete (typing dots → bubble, pill input, CTA)
 - [~] 03 Hero (typewriter headline) — scaffold with typewriter implemented; fidelity pass pending
 - [~] 04 Sign-in sheet — code complete (Apple/Google, account-optional copy)

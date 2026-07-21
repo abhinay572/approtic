@@ -1,0 +1,236 @@
+[
+  {
+    "name": "home",
+    "svg": "assets/icons/svg/home.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "progress",
+    "svg": "assets/icons/svg/progress.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "scan",
+    "svg": "assets/icons/svg/scan.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "coach",
+    "svg": "assets/icons/svg/coach.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "profile",
+    "svg": "assets/icons/svg/profile.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "chevron_left",
+    "svg": "assets/icons/svg/chevron_left.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "chevron_right",
+    "svg": "assets/icons/svg/chevron_right.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "close",
+    "svg": "assets/icons/svg/close.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "bell",
+    "svg": "assets/icons/svg/bell.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "share",
+    "svg": "assets/icons/svg/share.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "compare",
+    "svg": "assets/icons/svg/compare.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "calendar",
+    "svg": "assets/icons/svg/calendar.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "refresh",
+    "svg": "assets/icons/svg/refresh.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "help",
+    "svg": "assets/icons/svg/help.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "viewfinder",
+    "svg": "assets/icons/svg/viewfinder.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "check",
+    "svg": "assets/icons/svg/check.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "arrow_up_right",
+    "svg": "assets/icons/svg/arrow_up_right.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "arrow_right",
+    "svg": "assets/icons/svg/arrow_right.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "swap",
+    "svg": "assets/icons/svg/swap.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "camera",
+    "svg": "assets/icons/svg/camera.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "symmetry",
+    "svg": "assets/icons/svg/symmetry.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "jawline",
+    "svg": "assets/icons/svg/jawline.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "cheekbones",
+    "svg": "assets/icons/svg/cheekbones.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "eye",
+    "svg": "assets/icons/svg/eye.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "nose",
+    "svg": "assets/icons/svg/nose.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "skin",
+    "svg": "assets/icons/svg/skin.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "posture",
+    "svg": "assets/icons/svg/posture.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "hydrate",
+    "svg": "assets/icons/svg/hydrate.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "chin_tuck",
+    "svg": "assets/icons/svg/chin_tuck.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "tongue",
+    "svg": "assets/icons/svg/tongue.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "streak",
+    "svg": "assets/icons/svg/streak.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "sparkle",
+    "svg": "assets/icons/svg/sparkle.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "shield",
+    "svg": "assets/icons/svg/shield.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "scan_history",
+    "svg": "assets/icons/svg/scan_history.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "article",
+    "svg": "assets/icons/svg/article.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "pause",
+    "svg": "assets/icons/svg/pause.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "lock",
+    "svg": "assets/icons/svg/lock.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "filter",
+    "svg": "assets/icons/svg/filter.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  },
+  {
+    "name": "crown",
+    "svg": "assets/icons/svg/crown.svg",
+    "stroke": 1.8,
+    "viewBox": "0 0 24 24"
+  }
+]

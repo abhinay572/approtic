@@ -1,0 +1,163 @@
+{
+  "screen_01": {
+    "wordmark": "FaceForm",
+    "headline": "Unlock your best face",
+    "cta": "Get Started"
+  },
+  "screen_02": {
+    "title": "Sign in to start your face analysis",
+    "cta": "Continue with Apple",
+    "secondary": "Continue without an account",
+    "privacy": "Your scan data stays private.",
+    "metric": [
+      "Symmetry 95 · 92 · 3.0°",
+      "Cheekbones — High & angular",
+      "Jaw — 118°",
+      "Neck & chin — Defined"
+    ]
+  },
+  "screen_03": {
+    "headline": [
+      "Hey 👋",
+      "I’m FaceForm Coach",
+      "What should I call you?"
+    ],
+    "placeholder": "Type your name…"
+  },
+  "screen_04": {
+    "bubble": [
+      "But first I need to know what you’re actually trying to achieve.",
+      "So, what’s the main thing holding you back right now?"
+    ],
+    "chip": [
+      "📊 I can’t see my progress",
+      "😕 I’m unsure what to improve",
+      "🧭 I don’t know where to start",
+      "📚 Too much conflicting info",
+      "🔋 I lack motivation"
+    ],
+    "cta": "Continue"
+  },
+  "screen_05": {
+    "bubble": "What do you actually want to work on?",
+    "userBubble": "📊 I can’t see my progress ✓",
+    "chip": [
+      "💪 Jawline",
+      "💎 Cheekbones",
+      "👤 Side profile",
+      "⚖️ Symmetry",
+      "👃 Nose",
+      "👁 Eye area"
+    ],
+    "cta": "Done ✓"
+  },
+  "screen_06": {
+    "headline": "Real glow-up results",
+    "caption": "Luke S. · 19 · drag to compare",
+    "quote": "Better angles, stronger jawline — real change.",
+    "cta": "Continue"
+  },
+  "screen_07": {
+    "title": "Structure analysis",
+    "score": "82 /100",
+    "rank": "Top 14%",
+    "callout": "Jawline 121° · Top 18%",
+    "cta": "Continue"
+  },
+  "screen_08": {
+    "title": "Hold still — starting in",
+    "countdown": "3",
+    "caption": "Move your head in a circle to capture every angle."
+  },
+  "screen_09": {
+    "title": "Analysing your scan",
+    "progress": [
+      "Taking measurements — 24%",
+      "Analysing skin — 0%"
+    ],
+    "footnote": "This may take up to 30 seconds."
+  },
+  "screen_10": {
+    "title": "Skin analysis",
+    "score": "Texture 68 /100",
+    "status": "GOOD",
+    "suggestion": "Use gentle exfoliation 2–3×/week",
+    "cta": "Analyze my results"
+  },
+  "screen_11": {
+    "greeting": "Good afternoon, Abhinay.",
+    "tile": [
+      "DAILY SCAN — Start →",
+      "PROGRESS +7 ↗ structure · 30d",
+      "ROUTINE 3/5 Completed Today",
+      "ASK — What am I doing wrong?"
+    ]
+  },
+  "screen_12": {
+    "title": "Unlock All Features with Pro",
+    "plan": [
+      "YEARLY $39.99/yr",
+      "WEEKLY $12.99/wk"
+    ],
+    "cta": "CONTINUE →"
+  },
+  "screen_13": {
+    "title": "Your Progress",
+    "segment": [
+      "Progress",
+      "Calendar"
+    ],
+    "chart": "Structure trend"
+  },
+  "screen_14": {
+    "title": "Previous scans",
+    "action": "Compare"
+  },
+  "screen_15": {
+    "title": "Compare",
+    "delta": [
+      "Jawline 74 → 76 +2",
+      "Symmetry 91 → 91 0",
+      "Skin texture 64 → 68 +4"
+    ],
+    "cta": "Share progress"
+  },
+  "screen_16": {
+    "title": "Routine",
+    "caption": "Complete your sets to keep your streak alive.",
+    "cta": "Resume session →"
+  },
+  "screen_17": {
+    "label": "JAW CIRCUIT · 2 OF 5",
+    "title": "Chin tucks",
+    "instruction": "Pull your chin straight back, hold, release. Keep shoulders relaxed.",
+    "timer": "0:42",
+    "cta": "Pause",
+    "secondary": "Skip exercise"
+  },
+  "screen_18": {
+    "title": "Your FaceCard",
+    "name": "ABHINAY",
+    "score": "82",
+    "cta": "Share card",
+    "secondary": "Customize"
+  },
+  "screen_19": {
+    "title": "Battles",
+    "segment": [
+      "Global",
+      "Friends"
+    ],
+    "cta": "Challenge a friend"
+  },
+  "screen_20": {
+    "title": "Learn",
+    "featured": "Why jaw angle matters — 4 min read",
+    "article": [
+      "Mewing, explained",
+      "Fix forward head posture",
+      "The science of symmetry",
+      "Skincare basics"
+    ]
+  }
+}

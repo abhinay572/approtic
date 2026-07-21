@@ -36,8 +36,14 @@ struct ChatChip: Identifiable, Equatable {
 
 /// A scripted step: what the coach says, then which chips the user can pick.
 struct ChatScriptStep {
+    enum Style { case optionRows, chips }
     let coachLines: [String]
     let chips: [String]
+    var style: Style = .optionRows
+    var multiSelect = false
+    var cta: String = "Continue"
+    /// Progress through onboarding after this step completes (0...1).
+    var progress: Double = 0.25
 }
 
 // Screens 8–9, 13–14: analysis
@@ -165,7 +171,7 @@ final class MockDataService: DataService {
     static let shared = MockDataService()
     private init() {}
 
-    let coachName = "Kit"
+    let coachName = "FaceKit Coach"
 
     let profile = UserProfile(
         name: "Abhinay",
@@ -175,26 +181,34 @@ final class MockDataService: DataService {
         isPro: false
     )
 
-    // Screen 1 script — feel-critical. Coach speaks, chips appear, pick → morph.
+    // Screens 04–05 of the reference sheet — exact copy from the kit copy deck.
     let coachScript: [ChatScriptStep] = [
         ChatScriptStep(
-            coachLines: ["Hey, I'm Kit — your face coach. 👋",
-                         "I build you a 5-minute daily routine from your scan. First, what should we focus on?"],
-            chips: ["Sharper jawline", "Better skin", "Less puffiness", "Overall glow-up"]
+            coachLines: ["But first I need to know what you\u{2019}re actually trying to achieve.",
+                         "So, what\u{2019}s the main thing holding you back right now?"],
+            chips: ["📊 I can\u{2019}t see my progress",
+                    "😕 I\u{2019}m unsure what to improve",
+                    "🧭 I don\u{2019}t know where to start",
+                    "📚 Too much conflicting info",
+                    "🔋 I lack motivation"],
+            style: .optionRows,
+            multiSelect: false,
+            cta: "Continue",
+            progress: 0.25
         ),
         ChatScriptStep(
-            coachLines: ["Good pick. Jawline response comes fastest when we train daily — most people see change in 3–4 weeks.",
-                         "How much time can you give me a day?"],
-            chips: ["5 minutes", "10 minutes", "15+ minutes"]
+            coachLines: ["What do you actually want to work on?"],
+            chips: ["💪 Jawline", "💎 Cheekbones", "👤 Side profile",
+                    "⚖️ Symmetry", "👃 Nose", "👁 Eye area"],
+            style: .chips,
+            multiSelect: true,
+            cta: "Done ✓",
+            progress: 0.45
         ),
         ChatScriptStep(
-            coachLines: ["Perfect, that's all we need.",
-                         "Last one — have you trained your face before?"],
-            chips: ["Never", "A little", "Regularly"]
-        ),
-        ChatScriptStep(
-            coachLines: ["Great — I'll calibrate for a clean start. Let's scan your face so I can see what we're working with. 📸"],
-            chips: []
+            coachLines: ["Perfect. Let\u{2019}s scan your face so I can see what we\u{2019}re working with. 📸"],
+            chips: [],
+            progress: 0.6
         ),
     ]
 

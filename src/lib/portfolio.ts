@@ -15,69 +15,75 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "ai-customer-support",
-    title: "AI Customer Support Agent",
-    client: "FinBridge",
-    category: "AI",
-    description:
-      "Deployed an LLM-powered support agent that handles 80% of incoming tickets autonomously.",
-    problem:
-      "FinBridge was spending 40 hours per week on repetitive tier-1 support. Customers waited 8+ hours for responses. The support team was burning out.",
-    solution:
-      "We built a custom RAG-based AI agent trained on their knowledge base, product docs, and historical ticket resolutions. Integrated with their existing Intercom setup with a clean human-handoff flow.",
-    result:
-      "80% of tickets resolved without human intervention. Average response time dropped from 8 hours to 90 seconds. Support team now focuses on complex, high-value issues.",
-    metric: "80% automation",
-    tags: ["AI Agents", "LangChain", "OpenAI", "Next.js", "Supabase"],
-    color: "from-accent/30 to-accent-2/20",
-  },
-  {
-    slug: "ecommerce-platform",
-    title: "Multi-vendor E-commerce Platform",
-    client: "NestMart",
-    category: "Web",
-    description:
-      "A full-featured marketplace with vendor dashboards, real-time inventory, and AI product recommendations.",
-    problem:
-      "NestMart needed to scale from a single-vendor store to a multi-vendor marketplace. Their existing platform couldn't handle multiple sellers, live inventory, or personalised recommendations.",
-    solution:
-      "Built a Next.js marketplace with Supabase for multi-tenant data, Stripe Connect for vendor payouts, and a recommendation engine using collaborative filtering.",
-    result:
-      "GMV grew 3× in 6 months post-launch. 120 vendors onboarded in the first quarter. Conversion rate improved 40% from personalised recommendations.",
-    metric: "3× GMV growth",
-    tags: ["Next.js", "Supabase", "Stripe Connect", "TypeScript"],
-    color: "from-purple-500/30 to-accent/20",
-  },
-  {
-    slug: "saas-analytics",
-    title: "SaaS Analytics Dashboard",
-    client: "EduFlow",
-    category: "SaaS",
-    description: "Real-time analytics platform serving 50K+ daily active users.",
-    problem:
-      "EduFlow's legacy reporting system was running nightly batch jobs. Teachers and admins needed real-time data on student engagement to intervene early.",
-    solution:
-      "Rebuilt the entire analytics stack with streaming data ingestion, a React dashboard with real-time WebSocket updates, and AI-powered anomaly detection.",
-    result:
-      "50K+ DAU on launch day. Query times improved from 45 seconds to under 200ms. Early-intervention rate increased 60%, improving student outcomes.",
-    metric: "50K+ DAU",
-    tags: ["React", "Python", "PostgreSQL", "Redis", "WebSockets"],
-    color: "from-success/20 to-accent-2/20",
-  },
-  {
-    slug: "mobile-health-app",
-    title: "AI Health & Wellness App",
-    client: "WellPath",
+    slug: "triprank",
+    title: "TripRank – Speed Tracker & Camera Alerts",
+    client: "Approtic (In-house)",
     category: "Mobile",
-    description: "Personalised wellness coaching app with AI-driven habit tracking.",
+    description:
+      "Pro-grade GPS speedometer for iPhone and iPad with real-time speed camera alerts, G-force telemetry, and shareable trip cards.",
     problem:
-      "Generic wellness apps have 80% churn in the first month. WellPath needed an app that adapts to each user and keeps them coming back.",
+      "Drivers wanted a professional-grade speedometer with real-time speed camera warnings and trip analytics on iPhone — most existing apps were ad-heavy, ugly, or inaccurate.",
     solution:
-      "React Native app with an AI coach that learns from user behaviour, adjusts daily plans, and sends smart nudges at the right moment using predictive engagement.",
+      "Built a native iPhone and iPad app with a live GPS speedometer, a worldwide speed camera and traffic signal database via OpenStreetMap, G-force & braking telemetry, Dynamic Island and Live Activities integration, a global leaderboard, and AI-powered car photo styling.",
     result:
-      "Day-30 retention of 42% vs. 18% industry average. 4.8★ App Store rating. Named India's top wellness app of the year by TechCircle.",
-    metric: "42% D30 retention",
-    tags: ["React Native", "Python", "Claude AI", "Firebase"],
-    color: "from-pink-500/20 to-accent/20",
+      "Live on the App Store for iPhone and iPad. Dynamic Island shows speed and camera countdowns without opening the app. Features a global leaderboard with QR-code friend system and Instagram-ready shareable trip cards.",
+    metric: "Live on App Store",
+    tags: ["iOS", "Swift", "SwiftUI", "CoreLocation", "OpenStreetMap", "AI"],
+    color: "from-blue-600/30 to-cyan-500/20",
+    liveUrl: "https://apps.apple.com/us/app/triprank-speed-tracker/id6760617806",
+  },
+  {
+    slug: "resincraft",
+    title: "ResinCraft – Resin Calculator",
+    client: "Approtic (In-house)",
+    category: "Mobile",
+    description:
+      "Paid iPhone app that calculates the exact amount of epoxy resin and hardener needed for any mold shape and brand — fully offline.",
+    problem:
+      "Resin artists consistently over- or under-poured expensive epoxy because mix ratios differ per brand and calculating volumes for irregular mold shapes by hand is error-prone.",
+    solution:
+      "Built a native iPhone app with calculators for 7 mold shapes (rectangle, disc, sphere, half-sphere, cylinder, cone, dome), pre-loaded ratios for 7+ major resin brands, Imperial/Metric toggle, adjustable safety margin, and project preset saving — all offline, no account required.",
+    result:
+      "Published at $4.99 on the App Store. Serves resin jewelry makers, river-table builders, geode coaster artists, and tumbler crafters globally. Zero ads, zero tracking, zero subscriptions.",
+    metric: "$4.99 on App Store",
+    tags: ["iOS", "Swift", "SwiftUI", "Offline-first"],
+    color: "from-violet-600/30 to-indigo-700/20",
+    liveUrl: "https://apps.apple.com/us/app/resincraft-resin-calculator/id6766811423",
+  },
+  {
+    slug: "lock-screen-widgets",
+    title: "Lock Screen Widgets & Wallpapers",
+    client: "Approtic (In-house)",
+    category: "Mobile",
+    description:
+      "All-in-one iPhone lock screen customisation app with thousands of wallpapers and a full widget suite — clocks, weather, calendar, battery, fitness rings, and more.",
+    problem:
+      "After iOS 16 unlocked lock screen widgets, iPhone users wanted beautiful personalised lock screens but had to download multiple apps for wallpapers, clocks, weather, and fitness widgets separately.",
+    solution:
+      "Built a free iPhone app combining a curated wallpaper library with a comprehensive widget suite — clocks, weather, calendar, fitness rings, battery indicator, and more — all customisable from a single place without touching the phone while unlocking.",
+    result:
+      "Live on the App Store as a free download. One of the most complete lock screen customisation apps available for iPhone, covering wallpapers and widgets in a single install.",
+    metric: "Free on App Store",
+    tags: ["iOS", "Swift", "SwiftUI", "WidgetKit"],
+    color: "from-fuchsia-600/30 to-pink-500/20",
+    liveUrl: "https://apps.apple.com/us/app/lock-screen-widgets-wallpaper/id6443518798",
+  },
+  {
+    slug: "clone-it",
+    title: "Clone It – Dual App & Browser",
+    client: "Approtic (In-house)",
+    category: "Mobile",
+    description:
+      "iPhone app that lets users run two accounts of any app simultaneously, plus a multi-session browser with isolated container tabs.",
+    problem:
+      "iPhone users managing multiple accounts — social media, email, messaging — had no native way to stay logged into both simultaneously, forcing constant log-in and log-out cycles.",
+    solution:
+      "Built a free iPhone app with a dual-app cloner and a multi-session browser using isolated container tabs, ensuring cookies and sessions from one account never bleed into another. Work and personal accounts stay completely separate.",
+    result:
+      "Live on the App Store as a free download. Used by social media managers, freelancers, and anyone running multiple logins on a single iPhone — with no artificial limit on the number of clones.",
+    metric: "Free on App Store",
+    tags: ["iOS", "Swift", "SwiftUI", "WKWebView"],
+    color: "from-teal-600/30 to-emerald-500/20",
+    liveUrl: "https://apps.apple.com/us/app/clone-it-dual-app-browser/id6744391293",
   },
 ];

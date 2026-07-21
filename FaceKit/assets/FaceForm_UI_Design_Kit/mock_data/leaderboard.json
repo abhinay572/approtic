@@ -1,0 +1,26 @@
+{
+  "scope": "Global",
+  "leaders": [
+    {
+      "rank": 1,
+      "name": "Alex M.",
+      "score": 94
+    },
+    {
+      "rank": 2,
+      "name": "Daniel K.",
+      "score": 91
+    },
+    {
+      "rank": 3,
+      "name": "Ryan T.",
+      "score": 89
+    }
+  ],
+  "user": {
+    "rank": 1204,
+    "name": "Abhinay",
+    "score": 82,
+    "change": 3
+  }
+}

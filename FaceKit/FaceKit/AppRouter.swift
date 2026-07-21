@@ -72,7 +72,7 @@ struct RootView: View {
                     case .home: DashboardView()
                     case .progress: ProgressCalendarView()
                     case .scan: ScanIntroView()
-                    case .coach: CoachChatView()
+                    case .coach: CoachChatView(isOnboarding: false)
                     case .profile: ProfileSettingsView()
                     }
                 }

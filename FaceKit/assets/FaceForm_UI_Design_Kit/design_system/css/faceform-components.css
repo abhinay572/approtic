@@ -1,0 +1,32 @@
+.ff-screen {
+  min-height: 100dvh;
+  background: var(--ff-bg-bone);
+  color: var(--ff-ink);
+  font-family: var(--ff-font-text);
+}
+.ff-screen--chat {
+  background: radial-gradient(80% 45% at 55% 78%, var(--ff-bg-chat-glow) 0%, #fff 76%);
+}
+.ff-headline {
+  margin: 0;
+  font-family: var(--ff-font-display);
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.8px;
+  font-weight: 700;
+}
+.ff-headline__accent { color: var(--ff-accent); }
+.ff-body { color: var(--ff-body); font-size: 15px; line-height: 1.6; }
+.ff-card { background: #fff; border-radius: var(--ff-radius-card); box-shadow: var(--ff-shadow-card); }
+.ff-chip {
+  min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--ff-line); border-radius: var(--ff-radius-pill); background: #fff;
+  box-shadow: var(--ff-shadow-chip); font-weight: 500;
+}
+.ff-chip[aria-selected="true"] { border-color: var(--ff-accent); box-shadow: var(--ff-shadow-accent); }
+.ff-button-primary {
+  width: 100%; min-height: 56px; border: 0; border-radius: var(--ff-radius-pill);
+  background: var(--ff-ink); color: #fff; font-size: 16px; font-weight: 600;
+}
+.ff-progress { height: 4px; border-radius: 999px; overflow: hidden; background: #E7E9EE; }
+.ff-progress > span { display: block; height: 100%; border-radius: inherit; background: var(--ff-accent); }

@@ -1,0 +1,462 @@
+[
+  {
+    "number": 1,
+    "name": "Hero",
+    "slug": "hero",
+    "grid_row": 1,
+    "grid_column": 1,
+    "source_crop_px": {
+      "left": 9,
+      "top": 6,
+      "right": 216,
+      "bottom": 411
+    },
+    "source_size_px": {
+      "width": 207,
+      "height": 405
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/01_hero_1170x2535.png"
+  },
+  {
+    "number": 2,
+    "name": "Sign-In",
+    "slug": "sign_in",
+    "grid_row": 1,
+    "grid_column": 2,
+    "source_crop_px": {
+      "left": 222,
+      "top": 6,
+      "right": 424,
+      "bottom": 411
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 405
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/02_sign_in_1170x2535.png"
+  },
+  {
+    "number": 3,
+    "name": "Coach Intro",
+    "slug": "coach_intro",
+    "grid_row": 1,
+    "grid_column": 3,
+    "source_crop_px": {
+      "left": 429,
+      "top": 6,
+      "right": 631,
+      "bottom": 411
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 405
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/03_coach_intro_1170x2535.png"
+  },
+  {
+    "number": 4,
+    "name": "Coach Question",
+    "slug": "coach_question",
+    "grid_row": 1,
+    "grid_column": 4,
+    "source_crop_px": {
+      "left": 637,
+      "top": 6,
+      "right": 855,
+      "bottom": 411
+    },
+    "source_size_px": {
+      "width": 218,
+      "height": 405
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/04_coach_question_1170x2535.png"
+  },
+  {
+    "number": 5,
+    "name": "Multi-Select",
+    "slug": "multi_select",
+    "grid_row": 2,
+    "grid_column": 1,
+    "source_crop_px": {
+      "left": 9,
+      "top": 415,
+      "right": 216,
+      "bottom": 814
+    },
+    "source_size_px": {
+      "width": 207,
+      "height": 399
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/05_multi_select_1170x2535.png"
+  },
+  {
+    "number": 6,
+    "name": "Glow-Up Proof",
+    "slug": "glow_up_proof",
+    "grid_row": 2,
+    "grid_column": 2,
+    "source_crop_px": {
+      "left": 222,
+      "top": 415,
+      "right": 424,
+      "bottom": 814
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 399
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/06_glow_up_proof_1170x2535.png"
+  },
+  {
+    "number": 7,
+    "name": "Structure Analysis",
+    "slug": "structure_analysis",
+    "grid_row": 2,
+    "grid_column": 3,
+    "source_crop_px": {
+      "left": 429,
+      "top": 415,
+      "right": 631,
+      "bottom": 814
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 399
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/07_structure_analysis_1170x2535.png"
+  },
+  {
+    "number": 8,
+    "name": "Face Scan",
+    "slug": "face_scan",
+    "grid_row": 2,
+    "grid_column": 4,
+    "source_crop_px": {
+      "left": 637,
+      "top": 415,
+      "right": 855,
+      "bottom": 814
+    },
+    "source_size_px": {
+      "width": 218,
+      "height": 399
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/08_face_scan_1170x2535.png"
+  },
+  {
+    "number": 9,
+    "name": "Analysing",
+    "slug": "analysing",
+    "grid_row": 3,
+    "grid_column": 1,
+    "source_crop_px": {
+      "left": 9,
+      "top": 818,
+      "right": 216,
+      "bottom": 1202
+    },
+    "source_size_px": {
+      "width": 207,
+      "height": 384
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/09_analysing_1170x2535.png"
+  },
+  {
+    "number": 10,
+    "name": "Skin Analysis",
+    "slug": "skin_analysis",
+    "grid_row": 3,
+    "grid_column": 2,
+    "source_crop_px": {
+      "left": 222,
+      "top": 818,
+      "right": 424,
+      "bottom": 1202
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 384
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/10_skin_analysis_1170x2535.png"
+  },
+  {
+    "number": 11,
+    "name": "Dashboard",
+    "slug": "dashboard",
+    "grid_row": 3,
+    "grid_column": 3,
+    "source_crop_px": {
+      "left": 429,
+      "top": 818,
+      "right": 631,
+      "bottom": 1202
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 384
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/11_dashboard_1170x2535.png"
+  },
+  {
+    "number": 12,
+    "name": "Paywall",
+    "slug": "paywall",
+    "grid_row": 3,
+    "grid_column": 4,
+    "source_crop_px": {
+      "left": 637,
+      "top": 818,
+      "right": 855,
+      "bottom": 1202
+    },
+    "source_size_px": {
+      "width": 218,
+      "height": 384
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/12_paywall_1170x2535.png"
+  },
+  {
+    "number": 13,
+    "name": "Progress Tab",
+    "slug": "progress_tab",
+    "grid_row": 4,
+    "grid_column": 1,
+    "source_crop_px": {
+      "left": 9,
+      "top": 1206,
+      "right": 216,
+      "bottom": 1536
+    },
+    "source_size_px": {
+      "width": 207,
+      "height": 330
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/13_progress_tab_1170x2535.png"
+  },
+  {
+    "number": 14,
+    "name": "Scan History",
+    "slug": "scan_history",
+    "grid_row": 4,
+    "grid_column": 2,
+    "source_crop_px": {
+      "left": 222,
+      "top": 1206,
+      "right": 424,
+      "bottom": 1536
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 330
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/14_scan_history_1170x2535.png"
+  },
+  {
+    "number": 15,
+    "name": "Compare",
+    "slug": "compare",
+    "grid_row": 4,
+    "grid_column": 3,
+    "source_crop_px": {
+      "left": 429,
+      "top": 1206,
+      "right": 631,
+      "bottom": 1536
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 330
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/15_compare_1170x2535.png"
+  },
+  {
+    "number": 16,
+    "name": "Routine Tab",
+    "slug": "routine_tab",
+    "grid_row": 4,
+    "grid_column": 4,
+    "source_crop_px": {
+      "left": 637,
+      "top": 1206,
+      "right": 855,
+      "bottom": 1536
+    },
+    "source_size_px": {
+      "width": 218,
+      "height": 330
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/16_routine_tab_1170x2535.png"
+  },
+  {
+    "number": 17,
+    "name": "Exercise Player",
+    "slug": "exercise_player",
+    "grid_row": 5,
+    "grid_column": 1,
+    "source_crop_px": {
+      "left": 9,
+      "top": 1539,
+      "right": 216,
+      "bottom": 1820
+    },
+    "source_size_px": {
+      "width": 207,
+      "height": 281
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/17_exercise_player_1170x2535.png"
+  },
+  {
+    "number": 18,
+    "name": "FaceCard",
+    "slug": "facecard",
+    "grid_row": 5,
+    "grid_column": 2,
+    "source_crop_px": {
+      "left": 222,
+      "top": 1539,
+      "right": 424,
+      "bottom": 1820
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 281
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/18_facecard_1170x2535.png"
+  },
+  {
+    "number": 19,
+    "name": "Face Battles",
+    "slug": "face_battles",
+    "grid_row": 5,
+    "grid_column": 3,
+    "source_crop_px": {
+      "left": 429,
+      "top": 1539,
+      "right": 631,
+      "bottom": 1820
+    },
+    "source_size_px": {
+      "width": 202,
+      "height": 281
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/19_face_battles_1170x2535.png"
+  },
+  {
+    "number": 20,
+    "name": "Info Hub",
+    "slug": "info_hub",
+    "grid_row": 5,
+    "grid_column": 4,
+    "source_crop_px": {
+      "left": 637,
+      "top": 1539,
+      "right": 855,
+      "bottom": 1820
+    },
+    "source_size_px": {
+      "width": 218,
+      "height": 281
+    },
+    "export_size_px": {
+      "width": 1170,
+      "height": 2535
+    },
+    "aspect_ratio": "9:19.5",
+    "file": "screens/hires_png/20_info_hub_1170x2535.png"
+  }
+]
