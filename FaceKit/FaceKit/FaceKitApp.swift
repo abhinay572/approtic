@@ -32,6 +32,15 @@ struct ScreenPreviewHost: View {
     var body: some View {
         NavigationStack {
             switch screen {
+            case "onboarding": OnboardingFlowView()
+            case "compiling": CompilingRoutineView(onDone: {})
+            case "socialProof": SocialProofView(onContinue: {})
+            case "dashboardReady": DashboardReadyView(onWant: {})
+            case "commit": CommitSlideView(onCommitted: {})
+            case "tour": FeatureTourView(onFinished: {})
+            case "demoIntro": DemoIntroView(onTryDemo: {})
+            case "dashboardBuilt": DashboardBuiltView(onScan: {})
+            case "leverage": FaceLeverageView(onContinue: {})
             case "hero": HeroView()
             case "signIn": SignInSheetView()
             case "coachIntro": CoachIntroView()

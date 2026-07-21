@@ -4,6 +4,8 @@ import SwiftUI
 /// Product rule honored: no AI-generated transformation promises — the slider
 /// shows an example of tracking framing, labeled as an example.
 struct InterstitialsView: View {
+    /// When embedded in the onboarding flow, the parent supplies the CTA.
+    var embedded = false
     @Environment(AppRouter.self) private var router
     @State private var appearedCards = 0
 

@@ -3,6 +3,8 @@ import SwiftUI
 /// Screen 08 — Structure analysis: overall ring + per-feature bars.
 /// Product rules: score floor 40, constructive framing, not-medical footer.
 struct StructureAnalysisView: View {
+    /// When embedded in the onboarding flow, the parent supplies the CTA.
+    var embedded = false
     @Environment(AppRouter.self) private var router
     private let scan = MockDataService.shared.latestScan
     @State private var appeared = false

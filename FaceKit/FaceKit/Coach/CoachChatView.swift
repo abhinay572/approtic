@@ -1,13 +1,23 @@
 import SwiftUI
 
-/// Reference screens 04–05 — Coach chat (onboarding questions).
-/// Typing dots, slide-up bubbles, cascading option rows, azure user bubbles,
-/// option→bubble matchedGeometryEffect morph, segmented progress, bottom CTA.
+/// Coach chat, styled exactly per the competitor recording:
+/// white → azure radial glow, thin progress line, compact left-aligned chips
+/// that auto-send, azure user bubbles with "Just now ✓", typing dots,
+/// chip→bubble matchedGeometryEffect morph, bottom azure CTA on action steps.
 struct CoachChatView: View {
-    @State private var vm = CoachChatViewModel()
+    @State private var vm: CoachChatViewModel
     @Namespace private var morph
-    /// Onboarding shows progress segments + CTA and no tab bar.
     var isOnboarding = true
+    /// Flow hook: called with the interstitial id + a resume closure.
+    var onInterstitial: ((String, @escaping () -> Void) -> Void)?
+
+    init(isOnboarding: Bool = true,
+         userName: String? = nil,
+         onInterstitial: ((String, @escaping () -> Void) -> Void)? = nil) {
+        _vm = State(initialValue: CoachChatViewModel(userName: userName))
+        self.isOnboarding = isOnboarding
+        self.onInterstitial = onInterstitial
+    }
 
     var body: some View {
         ZStack {
@@ -15,11 +25,11 @@ struct CoachChatView: View {
 
             VStack(spacing: 0) {
                 header
-                if isOnboarding { progressBar }
+                if isOnboarding { progressLine }
 
                 ScrollViewReader { proxy in
                     ScrollView {
-                        VStack(spacing: 10) {
+                        VStack(spacing: 8) {
                             ForEach(vm.messages) { message in
                                 bubble(for: message).id(message.id)
                             }
@@ -31,11 +41,8 @@ struct CoachChatView: View {
                                 .transition(.opacity)
                                 .id("typing")
                             }
-
-                            // Options flow with the conversation, directly
-                            // under the last coach bubble (reference 04/05).
                             answersArea
-                                .padding(.top, 6)
+                                .padding(.top, 4)
                                 .id("answers")
                         }
                         .padding(.horizontal, 20)
@@ -45,7 +52,7 @@ struct CoachChatView: View {
                     .scrollIndicators(.hidden)
                     .onChange(of: vm.messages.count) {
                         withAnimation(DS.Motion.bubbleSpring) {
-                            proxy.scrollTo(vm.messages.last?.id, anchor: .bottom)
+                            proxy.scrollTo("answers", anchor: .bottom)
                         }
                     }
                     .onChange(of: vm.isTyping) {
@@ -55,91 +62,95 @@ struct CoachChatView: View {
                             }
                         }
                     }
+                    .onChange(of: vm.visibleChipCount) {
+                        withAnimation(DS.Motion.bubbleSpring) {
+                            proxy.scrollTo("answers", anchor: .bottom)
+                        }
+                    }
                 }
 
-                if isOnboarding { ctaButton }
+                if isOnboarding { actionCTA }
             }
         }
         .onAppear { vm.start() }
         .onDisappear { vm.stop() }
+        .onChange(of: vm.pendingInterstitial) {
+            guard let id = vm.pendingInterstitial else { return }
+            onInterstitial?(id) { vm.resume() }
+        }
     }
 
-    // MARK: Header — mascot raster + name + presence
+    // MARK: Header
 
     private var header: some View {
         HStack(spacing: 12) {
-            Image("coach-mascot")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 44, height: 44)
-                .clipShape(Circle())
-            VStack(alignment: .leading, spacing: 2) {
+            Spacer()
+            VStack(spacing: 4) {
+                Image("coach-mascot")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 44, height: 44)
+                    .clipShape(Circle())
                 Text(vm.coachName)
-                    .font(DS.Typo.sans(17, .semibold))
+                    .font(DS.Typo.sans(15, .semibold))
                     .foregroundStyle(DS.Colors.ink)
                 HStack(spacing: 5) {
                     Circle()
                         .fill(DS.Colors.success)
-                        .frame(width: 7, height: 7)
+                        .frame(width: 6, height: 6)
                     Text("your personal coach")
-                        .font(DS.Typo.caption)
+                        .font(DS.Typo.sans(12))
                         .foregroundStyle(DS.Colors.secondary)
                 }
             }
             Spacer()
         }
-        .padding(.horizontal, 20)
-        .padding(.top, 8)
-        .padding(.bottom, 12)
+        .padding(.top, 4)
+        .padding(.bottom, 8)
     }
 
-    // MARK: Segmented onboarding progress
+    // MARK: Thin progress line (video: single azure bar, grows per step)
 
-    private var progressBar: some View {
+    private var progressLine: some View {
         GeometryReader { geo in
-            let w = geo.size.width
-            HStack(spacing: 6) {
+            ZStack(alignment: .leading) {
+                Capsule().fill(DS.Colors.ink.opacity(0.07))
                 Capsule()
                     .fill(DS.Colors.azure)
-                    .frame(width: max(0, w * vm.progress))
-                ForEach(0..<4, id: \.self) { _ in
-                    Capsule()
-                        .fill(DS.Colors.ink.opacity(0.08))
-                        .frame(maxWidth: .infinity)
-                }
+                    .frame(width: max(8, geo.size.width * vm.progress))
+                    .animation(DS.Motion.bubbleSpring, value: vm.progress)
             }
-            .animation(DS.Motion.bubbleSpring, value: vm.progress)
         }
-        .frame(height: 4)
-        .padding(.horizontal, 20)
-        .padding(.bottom, 4)
+        .frame(width: 120, height: 3)
+        .frame(maxWidth: .infinity)
+        .padding(.bottom, 6)
     }
 
-    // MARK: Bubbles — coach white / user azure, slide-up 12pt spring
+    // MARK: Bubbles
 
     @ViewBuilder
     private func bubble(for message: ChatMessage) -> some View {
         HStack {
-            if message.role == .user { Spacer(minLength: 48) }
+            if message.role == .user { Spacer(minLength: 56) }
 
-            VStack(alignment: .trailing, spacing: 4) {
+            VStack(alignment: .trailing, spacing: 3) {
                 Text(message.text)
-                    .font(DS.Typo.chat)
+                    .font(DS.Typo.sans(15))
                     .foregroundStyle(message.role == .coach ? DS.Colors.ink : .white)
                 if message.role == .user {
-                    Text("Just now")
-                        .font(DS.Typo.sans(11, .medium))
+                    Text("Just now ✓")
+                        .font(DS.Typo.sans(10, .medium))
                         .foregroundStyle(.white.opacity(0.7))
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
             .background(message.role == .coach ? Color.white : DS.Colors.azure)
             .clipShape(BubbleShape(isUser: message.role == .user))
-            .shadow(color: DS.Colors.cardShadow, radius: 10, x: 0, y: 4)
+            .shadow(color: DS.Colors.cardShadow, radius: 8, x: 0, y: 3)
             .modifier(MorphTag(id: message.role == .user ? message.id : nil, namespace: morph))
 
-            if message.role == .coach { Spacer(minLength: 48) }
+            if message.role == .coach { Spacer(minLength: 56) }
         }
         .transition(
             .asymmetric(
@@ -149,159 +160,64 @@ struct CoachChatView: View {
         )
     }
 
-    // MARK: Answers — vertical option rows (screen 04) or chip flow (screen 05)
+    // MARK: Answer chips — compact, left-aligned, auto-send
 
     @ViewBuilder
     private var answersArea: some View {
         if let step = vm.currentStep, !vm.chips.isEmpty {
-            Group {
-                switch step.style {
-                case .optionRows: optionRows
-                case .chips: chipFlow
-                }
-            }
-            .animation(DS.Motion.bubbleSpring, value: vm.visibleChipCount)
-        }
-    }
-
-    private var optionRows: some View {
-        VStack(spacing: 8) {
-            ForEach(Array(vm.chips.enumerated()), id: \.element.id) { index, chip in
-                if index < vm.visibleChipCount {
-                    OptionRow(
-                        chip: chip,
-                        isSelected: vm.selected.contains(chip.id)
-                    ) { vm.toggle(chip) }
-                    .matchedGeometryEffect(id: chip.id, in: morph, isSource: true)
-                    .transition(
-                        .asymmetric(
-                            insertion: .offset(y: DS.Motion.bubbleSlide).combined(with: .opacity),
-                            removal: .opacity.combined(with: .scale(scale: 0.9))
-                        )
-                    )
-                }
-            }
-        }
-        .sensoryFeedback(.impact(weight: .light), trigger: vm.selected)
-    }
-
-    private var chipFlow: some View {
-        FlowLayout(spacing: 8) {
-            ForEach(Array(vm.chips.enumerated()), id: \.element.id) { index, chip in
-                if index < vm.visibleChipCount {
-                    ChipToggle(
-                        chip: chip,
-                        isSelected: vm.selected.contains(chip.id)
-                    ) { vm.toggle(chip) }
-                    .matchedGeometryEffect(id: chip.id, in: morph, isSource: true)
-                    .transition(
-                        .asymmetric(
-                            insertion: .offset(y: DS.Motion.bubbleSlide).combined(with: .opacity),
-                            removal: .opacity.combined(with: .scale(scale: 0.85))
-                        )
-                    )
-                }
-            }
-        }
-        .sensoryFeedback(.impact(weight: .light), trigger: vm.selected)
-    }
-
-    // MARK: CTA — pale azure disabled → azure enabled; step 2 uses black "Done ✓"
-
-    @ViewBuilder
-    private var ctaButton: some View {
-        let step = vm.currentStep
-        let isDone = step?.multiSelect == true
-        Button {
-            vm.commit()
-        } label: {
-            Text(step?.cta ?? "Continue")
-                .font(DS.Typo.cta)
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity)
-                .frame(height: DS.Size.ctaHeight)
-                .background(
-                    isDone
-                        ? AnyShapeStyle(DS.Colors.ink)
-                        : AnyShapeStyle(DS.Colors.azure.opacity(vm.ctaEnabled ? 1 : 0.35))
-                )
-                .clipShape(RoundedRectangle(cornerRadius: DS.Radius.cta, style: .continuous))
-        }
-        .buttonStyle(.plain)
-        .disabled(!vm.ctaEnabled)
-        .opacity(step == nil ? 0 : 1)
-        .padding(.horizontal, 20)
-        .padding(.bottom, 12)
-        .animation(DS.Motion.overlayFade, value: vm.ctaEnabled)
-    }
-}
-
-// MARK: - Option row (screen 04): white card row, azure border + check when selected
-
-struct OptionRow: View {
-    let chip: ChatChip
-    let isSelected: Bool
-    let action: () -> Void
-
-    private var emoji: String { String(chip.label.prefix(while: { !$0.isLetter })).trimmingCharacters(in: .whitespaces) }
-    private var title: String { String(chip.label.drop(while: { !$0.isLetter })) }
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 12) {
-                Text(emoji).font(.system(size: 18))
-                Text(title)
-                    .font(DS.Typo.sans(15, .medium))
-                    .foregroundStyle(DS.Colors.ink)
-                Spacer()
-                // Reference: only the selected row shows the azure check circle.
-                if isSelected {
-                    ZStack {
-                        Circle()
-                            .fill(DS.Colors.azure)
-                            .frame(width: 22, height: 22)
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 11, weight: .bold))
-                            .foregroundStyle(.white)
+            VStack(alignment: .leading, spacing: 8) {
+                switch step.layout {
+                case .stack:
+                    ForEach(visibleChips) { chip in
+                        answerChip(chip)
                     }
-                    .transition(.scale.combined(with: .opacity))
+                case .flow:
+                    FlowLayout(spacing: 8) {
+                        ForEach(visibleChips) { chip in
+                            answerChip(chip)
+                        }
+                    }
+                }
+                if step.kind == .multiChips, !vm.selected.isEmpty {
+                    Button { vm.commitMulti() } label: {
+                        Text("Done ✓")
+                            .font(DS.Typo.sans(15, .semibold))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 18)
+                            .padding(.vertical, 10)
+                            .background(DS.Colors.ink)
+                            .clipShape(Capsule())
+                    }
+                    .buttonStyle(.plain)
+                    .transition(.offset(y: 8).combined(with: .opacity))
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 14)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .strokeBorder(isSelected ? DS.Colors.azure : DS.Colors.hairline, lineWidth: isSelected ? 1.5 : 1)
-            )
-            .shadow(color: DS.Colors.cardShadow.opacity(isSelected ? 1 : 0.5), radius: 8, x: 0, y: 4)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .animation(DS.Motion.bubbleSpring, value: vm.visibleChipCount)
+            .animation(DS.Motion.bubbleSpring, value: vm.selected)
+            .sensoryFeedback(.impact(weight: .light), trigger: vm.selected)
         }
-        .buttonStyle(.plain)
     }
-}
 
-// MARK: - Chip toggle (screen 05): white pill, azure border + trailing check when selected
+    private var visibleChips: [ChatChip] {
+        Array(vm.chips.prefix(vm.visibleChipCount))
+    }
 
-struct ChipToggle: View {
-    let chip: ChatChip
-    let isSelected: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
+    private func answerChip(_ chip: ChatChip) -> some View {
+        let isSelected = vm.selected.contains(chip.id)
+        return Button { vm.tap(chip) } label: {
             HStack(spacing: 6) {
                 Text(chip.label)
-                    .font(DS.Typo.chip)
+                    .font(DS.Typo.sans(14, .medium))
                     .foregroundStyle(DS.Colors.ink)
                 if isSelected {
                     Image(systemName: "checkmark")
-                        .font(.system(size: 11, weight: .bold))
+                        .font(.system(size: 10, weight: .bold))
                         .foregroundStyle(DS.Colors.azure)
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 10)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 9)
             .background(Color.white)
             .clipShape(Capsule())
             .overlay(
@@ -310,13 +226,63 @@ struct ChipToggle: View {
                     lineWidth: isSelected ? 1.5 : 1
                 )
             )
+            .shadow(color: DS.Colors.cardShadow.opacity(0.6), radius: 6, x: 0, y: 2)
         }
         .buttonStyle(.plain)
+        .matchedGeometryEffect(id: chip.id, in: morph, isSource: true)
+        .transition(
+            .asymmetric(
+                insertion: .offset(y: DS.Motion.bubbleSlide).combined(with: .opacity),
+                removal: .opacity.combined(with: .scale(scale: 0.85))
+            )
+        )
+    }
+
+    // MARK: Action CTA — "Show me" renders as black chip; others azure pill
+
+    @ViewBuilder
+    private var actionCTA: some View {
+        if let step = vm.currentStep, step.kind == .action, let cta = step.cta {
+            if cta == "Show me" {
+                HStack {
+                    Button { vm.actionTapped() } label: {
+                        Text(cta)
+                            .font(DS.Typo.sans(15, .semibold))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 11)
+                            .background(DS.Colors.ink)
+                            .clipShape(Capsule())
+                    }
+                    .buttonStyle(.plain)
+                    Spacer()
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 14)
+                .opacity(vm.actionReady ? 1 : 0)
+                .animation(DS.Motion.overlayFade, value: vm.actionReady)
+            } else {
+                Button { vm.actionTapped() } label: {
+                    Text(cta)
+                        .font(DS.Typo.cta)
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: DS.Size.ctaHeight)
+                        .background(DS.Colors.azure.opacity(vm.actionReady ? 1 : 0.35))
+                        .clipShape(RoundedRectangle(cornerRadius: DS.Radius.cta, style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .disabled(!vm.actionReady)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 14)
+                .animation(DS.Motion.overlayFade, value: vm.actionReady)
+            }
+        }
     }
 }
 
 /// Applies a matched-geometry id only when one is relevant (user bubbles),
-/// so the option→bubble hero morph pairs cleanly with the departing row.
+/// so the chip→bubble hero morph pairs cleanly with the departing chip.
 struct MorphTag: ViewModifier {
     let id: UUID?
     let namespace: Namespace.ID
@@ -335,8 +301,8 @@ struct BubbleShape: Shape {
     let isUser: Bool
 
     func path(in rect: CGRect) -> Path {
-        let r: CGFloat = 18
-        let small: CGFloat = 6
+        let r: CGFloat = 16
+        let small: CGFloat = 5
         return Path(
             roundedRect: rect,
             cornerRadii: RectangleCornerRadii(

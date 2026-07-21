@@ -36,14 +36,22 @@ struct ChatChip: Identifiable, Equatable {
 
 /// A scripted step: what the coach says, then which chips the user can pick.
 struct ChatScriptStep {
-    enum Style { case optionRows, chips }
+    /// chips: tap auto-sends · multiChips: multi-select + black "Done ✓" chip ·
+    /// action: coach lines then a bottom CTA that can trigger an interstitial.
+    enum Kind { case chips, multiChips, action }
+    /// stack: left-aligned vertical chip stack · flow: wrapping chip rail.
+    enum ChipLayout { case stack, flow }
+
     let coachLines: [String]
-    let chips: [String]
-    var style: Style = .optionRows
-    var multiSelect = false
-    var cta: String = "Continue"
-    /// Progress through onboarding after this step completes (0...1).
-    var progress: Double = 0.25
+    var chips: [String] = []
+    var kind: Kind = .chips
+    var layout: ChipLayout = .flow
+    /// CTA label for .action steps ("Show me" renders as a black chip).
+    var cta: String? = nil
+    /// Identifier of the interstitial to present after this step completes.
+    var interstitial: String? = nil
+    /// Progress bar fill 0...1 while this step is active.
+    var progress: Double = 0.2
 }
 
 // Screens 8–9, 13–14: analysis
@@ -181,34 +189,75 @@ final class MockDataService: DataService {
         isPro: false
     )
 
-    // Screens 04–05 of the reference sheet — exact copy from the kit copy deck.
+    // Exact onboarding script transcribed from the competitor recording.
+    // "{name}" is replaced with the user's name at runtime.
     let coachScript: [ChatScriptStep] = [
         ChatScriptStep(
-            coachLines: ["But first I need to know what you\u{2019}re actually trying to achieve.",
-                         "So, what\u{2019}s the main thing holding you back right now?"],
-            chips: ["📊 I can\u{2019}t see my progress",
-                    "😕 I\u{2019}m unsure what to improve",
-                    "🧭 I don\u{2019}t know where to start",
-                    "📚 Too much conflicting info",
-                    "🔋 I lack motivation"],
-            style: .optionRows,
-            multiSelect: false,
-            cta: "Continue",
-            progress: 0.25
+            coachLines: ["Nice to meet you, {name} 🤝 Who am I working with today?"],
+            chips: ["👨 Man", "👩 Woman"],
+            kind: .chips, layout: .flow, progress: 0.10
         ),
         ChatScriptStep(
-            coachLines: ["What do you actually want to work on?"],
+            coachLines: ["Got it. And how old are you?"],
+            chips: ["18–24", "25–34", "35–44", "45–54"],
+            kind: .chips, layout: .flow, progress: 0.16
+        ),
+        ChatScriptStep(
+            coachLines: ["Real talk {name}, people are judging your face before you even open your mouth.",
+                         "Do you know what they\u{2019}re actually seeing?"],
+            kind: .action, cta: "Show me", interstitial: "leverage", progress: 0.22
+        ),
+        ChatScriptStep(
+            coachLines: ["And that\u{2019}s not just theory, {name}.",
+                         "Let me show you what real results actually look like for people who committed to it..."],
+            kind: .action, cta: "Continue", interstitial: "glowProof", progress: 0.30
+        ),
+        ChatScriptStep(
+            coachLines: ["That could be you, {name}.",
+                         "And it doesn\u{2019}t happen by guessing in the mirror.",
+                         "It takes real measurements, real analysis, knowing exactly where to improve.",
+                         "Let me show you exactly what I can do.",
+                         "Ready?"],
+            kind: .action, cta: "See it for yourself", interstitial: "demo", progress: 0.38
+        ),
+        ChatScriptStep(
+            coachLines: ["Pretty incredible right, {name}?",
+                         "That\u{2019}s exactly what I\u{2019}m going to do for you. But first I need to know a bit more about what you\u{2019}re actually trying to achieve.",
+                         "So {name}, what\u{2019}s the main thing holding you back right now?"],
+            chips: ["📊 I can\u{2019}t see my progress",
+                    "🤔 I\u{2019}m unsure what to improve",
+                    "🧭 I don\u{2019}t know where to start",
+                    "📚 There\u{2019}s too much conflicting info",
+                    "🔋 I lack motivation to keep going"],
+            kind: .chips, layout: .stack, progress: 0.50
+        ),
+        ChatScriptStep(
+            coachLines: ["That\u{2019}s a measurement problem. We can fix that.",
+                         "Got it. And what do you actually want to work on? What matters most to you?"],
             chips: ["💪 Jawline", "💎 Cheekbones", "👤 Side profile",
                     "⚖️ Symmetry", "👃 Nose", "👁 Eye area"],
-            style: .chips,
-            multiSelect: true,
-            cta: "Done ✓",
-            progress: 0.45
+            kind: .multiChips, layout: .flow, progress: 0.60
         ),
         ChatScriptStep(
-            coachLines: ["Perfect. Let\u{2019}s scan your face so I can see what we\u{2019}re working with. 📸"],
-            chips: [],
-            progress: 0.6
+            coachLines: ["Noted. Jawline, and we\u{2019}ll keep an eye on the rest.",
+                         "Okay and when that changes what does that actually mean for you?"],
+            chips: ["🔥 Unstoppable", "😎 Confident in any situation",
+                    "🪞 Proud of my reflection", "✨ Finally like myself",
+                    "😐 The same as before"],
+            kind: .chips, layout: .stack, progress: 0.72
+        ),
+        ChatScriptStep(
+            coachLines: ["Okay. Ambitious. Let\u{2019}s see what we can do.",
+                         "Last one {name}, and be honest with me. What do you actually want out of this?"],
+            chips: ["💰 More money", "🤝 Confidence", "💘 Dating life", "Other"],
+            kind: .chips, layout: .flow, progress: 0.84
+        ),
+        ChatScriptStep(
+            coachLines: ["Love that {name}, honestly that\u{2019}s what it\u{2019}s all about.",
+                         "85% of users feel more confident after just 4 weeks. Everything else starts to follow.",
+                         "Thanks for trusting me with this, {name}.",
+                         "I\u{2019}ve locked your answers in — your dashboard is ready 🙌"],
+            kind: .action, cta: "Take me there →", interstitial: "dashboardBuilt", progress: 1.0
         ),
     ]
 

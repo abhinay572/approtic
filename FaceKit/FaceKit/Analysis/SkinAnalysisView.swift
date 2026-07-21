@@ -4,6 +4,8 @@ import SwiftUI
 /// Motion spec: overlay switch is a 0.3s cross-fade; chip, gauge, and status
 /// pill recolor together.
 struct SkinAnalysisView: View {
+    /// When embedded in the onboarding flow, the parent supplies the CTA.
+    var embedded = false
     @Environment(AppRouter.self) private var router
     private let scan = MockDataService.shared.latestScan
     @State private var selected: MetricScore.Kind = .redness
