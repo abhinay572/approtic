@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		FACEC0DE00000000000000B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACEC0DE000000000000000E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACEC0DE000000000000000D;
+			remoteInfo = FaceKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		FACEC0DE00000000000000A1 /* FaceKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACEC0DE00000000000000B1 /* FaceKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,9 +40,21 @@
 			path = FaceKit;
 			sourceTree = "<group>";
 		};
+		FACEC0DE00000000000000B2 /* FaceKitUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FaceKitUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FACEC0DE00000000000000BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FACEC0DE00000000000000F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				FACEC0DE000000000000000A /* FaceKit */,
+				FACEC0DE00000000000000B2 /* FaceKitUITests */,
 				FACEC0DE000000000000000C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				FACEC0DE00000000000000A1 /* FaceKit.app */,
+				FACEC0DE00000000000000B1 /* FaceKitUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +108,28 @@
 			productReference = FACEC0DE00000000000000A1 /* FaceKit.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FACEC0DE00000000000000B3 /* FaceKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACEC0DE00000000000000B8 /* Build configuration list for PBXNativeTarget "FaceKitUITests" */;
+			buildPhases = (
+				FACEC0DE00000000000000B9 /* Sources */,
+				FACEC0DE00000000000000BA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FACEC0DE00000000000000B5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FACEC0DE00000000000000B2 /* FaceKitUITests */,
+			);
+			name = FaceKitUITests;
+			packageProductDependencies = (
+			);
+			productName = FaceKitUITests;
+			productReference = FACEC0DE00000000000000B1 /* FaceKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +142,10 @@
 				TargetAttributes = {
 					FACEC0DE000000000000000D = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					FACEC0DE00000000000000B3 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = FACEC0DE000000000000000D;
 					};
 				};
 			};
@@ -113,6 +164,7 @@
 			projectRoot = "";
 			targets = (
 				FACEC0DE000000000000000D /* FaceKit */,
+				FACEC0DE00000000000000B3 /* FaceKitUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -135,9 +187,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FACEC0DE00000000000000B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FACEC0DE00000000000000B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACEC0DE000000000000000D /* FaceKit */;
+			targetProxy = FACEC0DE00000000000000B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		FACEC0DE00000000000000B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.approtic.facekit.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = FaceKit;
+			};
+			name = Debug;
+		};
+		FACEC0DE00000000000000B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.approtic.facekit.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = FaceKit;
+			};
+			name = Release;
+		};
 		FACEC0DE00000000000000D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -307,6 +408,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FACEC0DE00000000000000B8 /* Build configuration list for PBXNativeTarget "FaceKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACEC0DE00000000000000B6 /* Debug */,
+				FACEC0DE00000000000000B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FACEC0DE00000000000000C1 /* Build configuration list for PBXProject "FaceKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

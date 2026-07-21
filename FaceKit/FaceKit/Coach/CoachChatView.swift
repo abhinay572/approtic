@@ -255,11 +255,13 @@ struct CoachChatView: View {
                             .clipShape(Capsule())
                     }
                     .buttonStyle(.plain)
+                    .disabled(!vm.actionReady)
                     Spacer()
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 14)
                 .opacity(vm.actionReady ? 1 : 0)
+                .allowsHitTesting(vm.actionReady)
                 .animation(DS.Motion.overlayFade, value: vm.actionReady)
             } else {
                 Button { vm.actionTapped() } label: {

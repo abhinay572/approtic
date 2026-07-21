@@ -125,23 +125,23 @@ struct FaceLeverageView: View {
                 .padding(.bottom, 10)
 
             VStack(alignment: .leading, spacing: 12) {
-                HStack(spacing: -8) {
-                    ForEach(1...4, id: \.self) { i in
-                        Image("avatar-0\(i)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 30, height: 30)
-                            .clipShape(Circle())
-                            .overlay(Circle().strokeBorder(.white, lineWidth: 2))
+                HStack(spacing: 8) {
+                    HStack(spacing: -8) {
+                        ForEach(1...4, id: \.self) { i in
+                            Image("avatar-0\(i)")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 30, height: 30)
+                                .clipShape(Circle())
+                                .overlay(Circle().strokeBorder(.white, lineWidth: 2))
+                        }
                     }
                     Text("120k+ users")
                         .font(DS.Typo.sans(13, .semibold))
                         .foregroundStyle(DS.Colors.ink)
-                        .padding(.leading, 16)
                     Text("already on the program")
                         .font(DS.Typo.sans(12))
                         .foregroundStyle(DS.Colors.secondary)
-                        .padding(.leading, 6)
                 }
                 (Text("\u{201C}Three weeks in and people ").foregroundStyle(DS.Colors.ink)
                     + Text("treat me differently.").foregroundStyle(DS.Colors.azure)
@@ -211,13 +211,7 @@ struct GlowProofCover: View {
     let onContinue: () -> Void
 
     var body: some View {
-        VStack(spacing: 0) {
-            InterstitialsView(embedded: true)
-            Button("Continue", action: onContinue)
-                .buttonStyle(PrimaryCTAStyle())
-                .padding(.horizontal, 20)
-                .padding(.bottom, 16)
-        }
+        InterstitialsView(onContinue: onContinue)
     }
 }
 
