@@ -67,7 +67,7 @@ export const localBusinessSchema = {
   name: "Approtic Technologies",
   image: "https://approtic.in/og/default.png",
   url: "https://approtic.in",
-  telephone: "+91-99999-99999",
+  telephone: "+91-96666-59359",
   email: "hello@approtic.in",
   priceRange: "₹₹₹",
   address: {

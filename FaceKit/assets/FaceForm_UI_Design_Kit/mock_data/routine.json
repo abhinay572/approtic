@@ -1,0 +1,31 @@
+{
+  "period": "Morning",
+  "durationMinutes": 19,
+  "exercises": [
+    {
+      "name": "Mewing hold",
+      "duration": "1m 30s",
+      "done": true
+    },
+    {
+      "name": "Hydrate",
+      "duration": "Drink 2L today",
+      "done": true
+    },
+    {
+      "name": "Jaw circuit",
+      "duration": "5 exercises",
+      "done": false
+    },
+    {
+      "name": "Chin tucks",
+      "duration": "3 sets",
+      "done": false
+    },
+    {
+      "name": "Tongue posture",
+      "duration": "10 min",
+      "done": false
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Layered for Rive import: body / highlight / eyes / mouth / blush are separate groups -->
+  <g id="shadow">
+    <ellipse cx="120" cy="212" rx="52" ry="10" fill="#16181D" opacity="0.08"/>
+  </g>
+  <g id="body">
+    <path d="M120 28c46 0 76 32 76 78 0 30-12 52-30 66-8 6-12 16-10 26l1 6c1 4-3 7-7 5l-16-9c-5-3-10-4-14-4s-9 1-14 4l-16 9c-4 2-8-1-7-5l1-6c2-10-2-20-10-26-18-14-30-36-30-66 0-46 30-78 76-78Z" fill="#2F80FF"/>
+    <path d="M120 28c46 0 76 32 76 78 0 30-12 52-30 66-8 6-12 16-10 26l1 6c1 4-3 7-7 5l-16-9c-5-3-10-4-14-4s-9 1-14 4l-16 9c-4 2-8-1-7-5l1-6c2-10-2-20-10-26-18-14-30-36-30-66 0-46 30-78 76-78Z" fill="url(#bodyGrad)"/>
+  </g>
+  <g id="highlight">
+    <ellipse cx="94" cy="66" rx="30" ry="18" fill="#FFFFFF" opacity="0.30" transform="rotate(-18 94 66)"/>
+    <circle cx="70" cy="88" r="6" fill="#FFFFFF" opacity="0.35"/>
+  </g>
+  <g id="eyes">
+    <g id="eye-left">
+      <ellipse cx="98" cy="112" rx="10" ry="13" fill="#FFFFFF"/>
+      <circle cx="100" cy="115" r="5.5" fill="#16181D"/>
+      <circle cx="102" cy="112.5" r="1.8" fill="#FFFFFF"/>
+    </g>
+    <g id="eye-right">
+      <ellipse cx="142" cy="112" rx="10" ry="13" fill="#FFFFFF"/>
+      <circle cx="144" cy="115" r="5.5" fill="#16181D"/>
+      <circle cx="146" cy="112.5" r="1.8" fill="#FFFFFF"/>
+    </g>
+  </g>
+  <g id="blush">
+    <ellipse cx="86" cy="132" rx="8" ry="4.5" fill="#FF6B7A" opacity="0.45"/>
+    <ellipse cx="154" cy="132" rx="8" ry="4.5" fill="#FF6B7A" opacity="0.45"/>
+  </g>
+  <g id="mouth">
+    <path d="M110 138c4 6 16 6 20 0" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  </g>
+  <defs>
+    <radialGradient id="bodyGrad" cx="0.35" cy="0.25" r="1.1">
+      <stop offset="0" stop-color="#5C9DFF"/>
+      <stop offset="0.65" stop-color="#2F80FF"/>
+      <stop offset="1" stop-color="#1E63D6"/>
+    </radialGradient>
+  </defs>
+</svg>

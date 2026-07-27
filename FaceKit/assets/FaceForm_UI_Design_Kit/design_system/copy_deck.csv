@@ -1,0 +1,98 @@
+screen_id,element,copy
+1,wordmark,FaceForm
+1,headline,Unlock your best face
+1,cta,Get Started
+2,title,Sign in to start your face analysis
+2,cta,Continue with Apple
+2,secondary,Continue without an account
+2,privacy,Your scan data stays private.
+2,metric,Symmetry 95 · 92 · 3.0°
+2,metric,Cheekbones — High & angular
+2,metric,Jaw — 118°
+2,metric,Neck & chin — Defined
+3,headline,Hey 👋
+3,headline,I’m FaceForm Coach
+3,headline,What should I call you?
+3,placeholder,Type your name…
+4,bubble,But first I need to know what you’re actually trying to achieve.
+4,bubble,"So, what’s the main thing holding you back right now?"
+4,chip,📊 I can’t see my progress
+4,chip,😕 I’m unsure what to improve
+4,chip,🧭 I don’t know where to start
+4,chip,📚 Too much conflicting info
+4,chip,🔋 I lack motivation
+4,cta,Continue
+5,bubble,What do you actually want to work on?
+5,userBubble,📊 I can’t see my progress ✓
+5,chip,💪 Jawline
+5,chip,💎 Cheekbones
+5,chip,👤 Side profile
+5,chip,⚖️ Symmetry
+5,chip,👃 Nose
+5,chip,👁 Eye area
+5,cta,Done ✓
+6,headline,Real glow-up results
+6,caption,Luke S. · 19 · drag to compare
+6,quote,"Better angles, stronger jawline — real change."
+6,cta,Continue
+7,title,Structure analysis
+7,score,82 /100
+7,rank,Top 14%
+7,callout,Jawline 121° · Top 18%
+7,cta,Continue
+8,title,Hold still — starting in
+8,countdown,3
+8,caption,Move your head in a circle to capture every angle.
+9,title,Analysing your scan
+9,progress,Taking measurements — 24%
+9,progress,Analysing skin — 0%
+9,footnote,This may take up to 30 seconds.
+10,title,Skin analysis
+10,score,Texture 68 /100
+10,status,GOOD
+10,suggestion,Use gentle exfoliation 2–3×/week
+10,cta,Analyze my results
+11,greeting,"Good afternoon, Abhinay."
+11,tile,DAILY SCAN — Start →
+11,tile,PROGRESS +7 ↗ structure · 30d
+11,tile,ROUTINE 3/5 Completed Today
+11,tile,ASK — What am I doing wrong?
+12,title,Unlock All Features with Pro
+12,plan,YEARLY $39.99/yr
+12,plan,WEEKLY $12.99/wk
+12,cta,CONTINUE →
+13,title,Your Progress
+13,segment,Progress
+13,segment,Calendar
+13,chart,Structure trend
+14,title,Previous scans
+14,action,Compare
+15,title,Compare
+15,delta,Jawline 74 → 76 +2
+15,delta,Symmetry 91 → 91 0
+15,delta,Skin texture 64 → 68 +4
+15,cta,Share progress
+16,title,Routine
+16,caption,Complete your sets to keep your streak alive.
+16,cta,Resume session →
+17,label,JAW CIRCUIT · 2 OF 5
+17,title,Chin tucks
+17,instruction,"Pull your chin straight back, hold, release. Keep shoulders relaxed."
+17,timer,0:42
+17,cta,Pause
+17,secondary,Skip exercise
+18,title,Your FaceCard
+18,name,ABHINAY
+18,score,82
+18,cta,Share card
+18,secondary,Customize
+19,title,Battles
+19,segment,Global
+19,segment,Friends
+19,cta,Challenge a friend
+20,title,Learn
+20,featured,Why jaw angle matters — 4 min read
+20,article,"Mewing, explained"
+20,article,Fix forward head posture
+20,article,The science of symmetry
+20,article,Skincare basics

@@ -1,0 +1,271 @@
+[
+  {
+    "id": 1,
+    "name": "Hero",
+    "category": "Onboarding",
+    "headline": "Unlock your best face",
+    "accentWords": [
+      "Unlock",
+      "best"
+    ],
+    "cta": "Get Started",
+    "keyComponents": [
+      "Capsule logo",
+      "FaceForm wordmark",
+      "Floating scan-phone artwork",
+      "Black primary CTA"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sign-In",
+    "category": "Onboarding",
+    "headline": "Sign in to start your face analysis",
+    "cta": "Continue with Apple",
+    "secondary": "Continue without an account",
+    "keyComponents": [
+      "Editorial profile photo",
+      "Four metric callouts",
+      "Bottom sheet",
+      "Privacy note"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Coach Intro",
+    "category": "Onboarding",
+    "headline": "Hey 👋 / I’m FaceForm Coach / What should I call you?",
+    "cta": "Send name",
+    "keyComponents": [
+      "Gel-ball mascot",
+      "Chat glow background",
+      "Name field",
+      "Azure send button"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Coach Question",
+    "category": "Onboarding",
+    "headline": "What is holding you back?",
+    "cta": "Continue",
+    "keyComponents": [
+      "Coach header",
+      "Segmented progress",
+      "Two coach bubbles",
+      "Five quick-reply chips"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Multi-Select",
+    "category": "Onboarding",
+    "headline": "What do you actually want to work on?",
+    "cta": "Done ✓",
+    "keyComponents": [
+      "Coach bubble",
+      "User answer bubble",
+      "Two-column multi-select chips"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Glow-Up Proof",
+    "category": "Onboarding",
+    "headline": "Real glow-up results",
+    "accentWords": [
+      "results"
+    ],
+    "cta": "Continue",
+    "keyComponents": [
+      "Progress header",
+      "Before/after drag card",
+      "Stat tiles",
+      "Testimonial"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Structure Analysis",
+    "category": "Analysis",
+    "headline": "Structure analysis",
+    "cta": "Continue",
+    "keyComponents": [
+      "Large score",
+      "Porcelain mask",
+      "Landmark callout",
+      "Metric chips",
+      "Structure/Skin segment"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Face Scan",
+    "category": "Scan",
+    "headline": "Hold still — starting in 3",
+    "keyComponents": [
+      "Help/refresh buttons",
+      "Organic selfie mask",
+      "Radial capture ticks",
+      "Instruction caption"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Analysing",
+    "category": "Scan",
+    "headline": "Analysing your scan",
+    "keyComponents": [
+      "Porcelain mask",
+      "Two progress rows",
+      "Time estimate"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Skin Analysis",
+    "category": "Analysis",
+    "headline": "Skin analysis",
+    "cta": "Analyze my results",
+    "keyComponents": [
+      "Texture score",
+      "Model contour overlay",
+      "Metric chips",
+      "Regional gauges",
+      "Suggestion card"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Dashboard",
+    "category": "Main App",
+    "headline": "Good afternoon, Abhinay.",
+    "keyComponents": [
+      "Score hero card",
+      "2×2 bento grid",
+      "Routine preview",
+      "Main tab bar"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Paywall",
+    "category": "Monetization",
+    "headline": "Unlock All Features with Pro",
+    "cta": "CONTINUE →",
+    "keyComponents": [
+      "Cloud hero",
+      "Capsule logo",
+      "Benefit checklist",
+      "Plan selector",
+      "Legal footer"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Progress Tab",
+    "category": "Main App",
+    "headline": "Your Progress",
+    "keyComponents": [
+      "Progress/Calendar segment",
+      "Stat tiles",
+      "Calendar",
+      "Trend chart",
+      "Tab bar"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Scan History",
+    "category": "Main App",
+    "headline": "Previous scans",
+    "keyComponents": [
+      "Filter chips",
+      "Scan rows",
+      "Score badges",
+      "Compare link",
+      "Tab bar"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Compare",
+    "category": "Main App",
+    "headline": "Compare",
+    "cta": "Share progress",
+    "keyComponents": [
+      "Date selectors",
+      "Before/after drag card",
+      "Delta rows",
+      "Dual bars"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Routine Tab",
+    "category": "Main App",
+    "headline": "Routine",
+    "cta": "Resume session →",
+    "keyComponents": [
+      "Morning/Evening segment",
+      "Azure routine hero",
+      "Exercise checklist",
+      "Tab bar"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Exercise Player",
+    "category": "Training",
+    "headline": "Chin tucks",
+    "cta": "Pause",
+    "keyComponents": [
+      "Close control",
+      "Exercise position label",
+      "Line illustration",
+      "Ring timer",
+      "Skip action"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "FaceCard",
+    "category": "Social",
+    "headline": "Your FaceCard",
+    "cta": "Share card",
+    "secondary": "Customize",
+    "keyComponents": [
+      "Share icon",
+      "Premium score card",
+      "Micro stats",
+      "Streak",
+      "Wordmark"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Face Battles",
+    "category": "Social",
+    "headline": "Battles",
+    "cta": "Challenge a friend",
+    "keyComponents": [
+      "Global/Friends segment",
+      "Top-three podium",
+      "Leaderboard rows",
+      "Highlighted user rank",
+      "Tab bar"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Info Hub",
+    "category": "Content",
+    "headline": "Learn",
+    "keyComponents": [
+      "Category chips",
+      "Featured article",
+      "Two-column article grid",
+      "Tab bar"
+    ]
+  }
+]

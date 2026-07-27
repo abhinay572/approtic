@@ -34,10 +34,10 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects shipped" },
+  { value: 22, suffix: "+", label: "Apps on the App Store" },
   { value: 10, suffix: "+", label: "Countries served" },
+  { value: 50, suffix: "+", label: "Projects shipped" },
   { value: 95, suffix: "%", label: "Client retention" },
-  { value: 3, suffix: "×", label: "Avg. ROI delivered" },
 ];
 
 export function StatsCounter() {
